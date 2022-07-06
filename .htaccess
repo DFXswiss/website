@@ -1,4 +1,5 @@
 Redirect 301 /app https://api.dfx.swiss/app
+Redirect 301 /en/terms https://dfx.swiss/en/agb/
 
 ErrorDocument 404 /404.html
 DirectoryIndex index.html index.htm
