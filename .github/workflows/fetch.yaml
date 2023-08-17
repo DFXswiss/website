@@ -1,0 +1,46 @@
+name: Fetch JSON
+
+on:
+  workflow_dispatch:
+    inputs:
+      user:
+        required: true
+        description: User name
+
+env:
+  NODE_VERSION: "16.x"
+
+jobs:
+  fetch:
+    name: Fetch JSON from Azure Storage
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Use Node.js ${{ env.NODE_VERSION }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: Install packages
+        run: |
+          npm ci
+          
+      - name: Download the file
+        uses: suisei-cn/actions-download-file@v1
+        with:
+          url: https://stdfxapiloc.blob.core.windows.net/website/${{ github.event.inputs.user }}.json
+          target: src
+          filename: website.json
+
+      - name: Autoformat
+        run: |
+          npm run format
+      
+      - name: Commit the changes
+        uses: stefanzweifel/git-auto-commit-action@v4
+        
+

@@ -20,48 +20,52 @@
 
 <body>
   <style>
-    html, body, #gjs {
+    html,
+    body,
+    #gjs {
       margin: 0;
       height: 100% !important;
     }
   </style>
 
-  <div id="gjs"></div>
 
+  <div id="gjs">Please select a user ...</div>
 
   <script type="text/javascript">
-    const projectId = 'website';
-    const projectEndpoint = `http://localhost:4001/sites/${projectId}`;
+    const user = new URLSearchParams(window.location.search).get('user');
 
+    const token = 'xxx';
+    const projectEndpoint = `xxx/website/${user}.json${token}`;
+    const headers = { 'x-ms-blob-type': 'BlockBlob' }
 
-    var editor = grapesjs.init({
-      container: '#gjs',
-      plugins: [
-        'grapesjs-preset-webpage',
-        "gjs-blocks-basic",
-        "grapesjs-navbar",
-        "grapesjs-tooltip",
-        "grapesjs-plugin-forms",
-        "grapesjs-tabs",
-        "grapesjs-plugin-export",
-        "grapesjs-blocks-flexbox",
-        "grapesjs-custom-code",
-      ],
-      pluginsOpts: {},
-      storageManager: {
-        type: 'remote',
-        stepsBeforeSave: 1,
-        options: {
-          remote: {
-            urlLoad: projectEndpoint,
-            urlStore: projectEndpoint,
-            fetchOptions: opts => (opts.method === 'POST' ? { method: 'PATCH' } : {}),
-            onStore: data => ({ id: projectId, data }),
-            onLoad: result => result.data,
+    if (user) {
+      var editor = grapesjs.init({
+        container: '#gjs',
+        plugins: [
+          'grapesjs-preset-webpage',
+          "gjs-blocks-basic",
+          "grapesjs-navbar",
+          "grapesjs-tooltip",
+          "grapesjs-plugin-forms",
+          "grapesjs-tabs",
+          "grapesjs-plugin-export",
+          "grapesjs-blocks-flexbox",
+          "grapesjs-custom-code",
+        ],
+        pluginsOpts: {},
+        storageManager: {
+          type: 'remote',
+          stepsBeforeSave: 1,
+          options: {
+            remote: {
+              urlLoad: projectEndpoint,
+              urlStore: projectEndpoint,
+              fetchOptions: opts => (opts.method === 'POST' ? { method: 'PUT', headers } : { headers }),
+            }
           }
         }
-      }
-    });
+      });
+    }
   </script>
 </body>
 
