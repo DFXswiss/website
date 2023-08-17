@@ -33,7 +33,5 @@ jobs:
           
       - name: Upload the file
         run: |
-          json=$(<src/website.json)
-
-          curl -d "$json" -H "Content-Type: application/json" -H "x-ms-blob-type: BlockBlob" -X PUT "https://stdfxapiloc.blob.core.windows.net/website/${{ github.event.inputs.user }}.json${{ secrets.SAS }}"
+          curl -d @src/website.json -H "Content-Type: application/json" -H "x-ms-blob-type: BlockBlob" -X PUT "https://stdfxapiloc.blob.core.windows.net/website/${{ github.event.inputs.user }}.json${{ secrets.SAS }}"
 
