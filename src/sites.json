@@ -1,0 +1,32 @@
+{
+  "sites": [
+    {
+      "id": "website",
+      "data": {
+        "assets": [],
+        "styles": [],
+        "pages": [
+          {
+            "frames": [
+              {
+                "component": {
+                  "type": "wrapper",
+                  "stylable": [
+                    "background",
+                    "background-color",
+                    "background-image",
+                    "background-repeat",
+                    "background-attachment",
+                    "background-position",
+                    "background-size"
+                  ]
+                }
+              }
+            ],
+            "id": "3PLyMzaZm2DMcoUk"
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>GrapesJS - DFX Website</title>
+
+  <link rel="stylesheet" href="https://unpkg.com/grapesjs/dist/css/grapes.min.css">
+  <script src="https://unpkg.com/grapesjs"></script>
+  <script src="https://unpkg.com/grapesjs-preset-webpage"></script>
+  <script src="https://unpkg.com/grapesjs-blocks-basic"></script>
+
+  <script src="https://unpkg.com/grapesjs-navbar"></script>
+  <script src="https://unpkg.com/grapesjs-tooltip"></script>
+  <script src="https://unpkg.com/grapesjs-plugin-forms"></script>
+  <script src="https://unpkg.com/grapesjs-tabs"></script>
+  <script src="https://unpkg.com/grapesjs-plugin-export"></script>
+  <script src="https://unpkg.com/grapesjs-blocks-flexbox"></script>
+  <script src="https://unpkg.com/grapesjs-custom-code"></script>
+</head>
+
+<body>
+  <style>
+    html, body, #gjs {
+      margin: 0;
+      height: 100% !important;
+    }
+  </style>
+
+  <div id="gjs"></div>
+
+
+  <script type="text/javascript">
+    const projectId = 'website';
+    const projectEndpoint = `http://localhost:4001/sites/${projectId}`;
+
+
+    var editor = grapesjs.init({
+      container: '#gjs',
+      plugins: [
+        'grapesjs-preset-webpage',
+        "gjs-blocks-basic",
+        "grapesjs-navbar",
+        "grapesjs-tooltip",
+        "grapesjs-plugin-forms",
+        "grapesjs-tabs",
+        "grapesjs-plugin-export",
+        "grapesjs-blocks-flexbox",
+        "grapesjs-custom-code",
+      ],
+      pluginsOpts: {},
+      storageManager: {
+        type: 'remote',
+        stepsBeforeSave: 1,
+        options: {
+          remote: {
+            urlLoad: projectEndpoint,
+            urlStore: projectEndpoint,
+            fetchOptions: opts => (opts.method === 'POST' ? { method: 'PATCH' } : {}),
+            onStore: data => ({ id: projectId, data }),
+            onLoad: result => result.data,
+          }
+        }
+      }
+    });
+  </script>
+</body>
+
+</html>
