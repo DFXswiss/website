@@ -36,7 +36,7 @@
 
     const token = 'xxx';
     const projectEndpoint = `xxx/website/${user}.json${token}`;
-    const headers = { 'x-ms-blob-type': 'BlockBlob' }
+    const headers = { 'Content-Type': 'application/json', 'x-ms-blob-type': 'BlockBlob' }
 
     if (user) {
       var editor = grapesjs.init({

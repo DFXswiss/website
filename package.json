@@ -5,11 +5,13 @@
   "scripts": {
     "start": "concurrently \"npm run grapesjs\" \"sleepms 1000 && open http://localhost:4000\"",
     "grapesjs": "serve -p 4000 grapesjs",
-    "format": "prettier src/website.json --write"
+    "format": "prettier src/website.json --write",
+    "minify": "minifyall src/website.json"
   },
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "@josee9988/minifyall": "^1.2.2",
     "concurrently": "^8.2.0",
     "prettier": "^3.0.2",
     "serve": "^14.2.0",

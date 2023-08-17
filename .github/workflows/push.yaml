@@ -1,0 +1,39 @@
+name: Push JSON
+
+on:
+  workflow_dispatch:
+    inputs:
+      user:
+        required: true
+        description: User name
+
+env:
+  NODE_VERSION: "16.x"
+
+jobs:
+  push:
+    name: Push JSON to Azure Storage
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Use Node.js ${{ env.NODE_VERSION }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: Install packages
+        run: |
+          npm ci
+
+      - name: Minify
+        run: |
+          npm run minify
+          
+      - name: Upload the file
+        run: |
+          json=$(<src/website.json)
+
+          curl -d "$json" -H "Content-Type: application/json" -H "x-ms-blob-type: BlockBlob" -X PUT "https://stdfxapiloc.blob.core.windows.net/website/${{ github.event.inputs.user }}.json${{ secrets.SAS }}"
+
