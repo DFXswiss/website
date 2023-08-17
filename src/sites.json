@@ -93,7 +93,7 @@
                         },
                         {
                           "type": "textnode",
-                          "content": "Text 2"
+                          "content": "Text 2 Das hier ist die änderung von Benutzer 1 local"
                         },
                         {
                           "tagName": "br",
