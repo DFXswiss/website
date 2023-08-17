@@ -12,7 +12,6 @@
   <script src="https://unpkg.com/grapesjs-navbar"></script>
   <script src="https://unpkg.com/grapesjs-tooltip"></script>
   <script src="https://unpkg.com/grapesjs-plugin-forms"></script>
-  <script src="https://unpkg.com/grapesjs-tabs"></script>
   <script src="https://unpkg.com/grapesjs-plugin-export"></script>
   <script src="https://unpkg.com/grapesjs-blocks-flexbox"></script>
   <script src="https://unpkg.com/grapesjs-custom-code"></script>
@@ -41,13 +40,13 @@
     if (user) {
       var editor = grapesjs.init({
         container: '#gjs',
+        // CAUTION: plugins should also to be added to build.ts
         plugins: [
           'grapesjs-preset-webpage',
           "gjs-blocks-basic",
           "grapesjs-navbar",
           "grapesjs-tooltip",
           "grapesjs-plugin-forms",
-          "grapesjs-tabs",
           "grapesjs-plugin-export",
           "grapesjs-blocks-flexbox",
           "grapesjs-custom-code",
