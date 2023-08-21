@@ -9,3 +9,6 @@ Setup:
 1. Install Node.js: https://nodejs.org/en/download
 1. Install packages: npm i
 1. Run: npm start
+
+Version 0.0.2
+Testing Grundfunktionen und scrollen
