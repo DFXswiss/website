@@ -805,60 +805,50 @@
               "background-position",
               "background-size"
             ],
-            "attributes": { "id": "iqqe" },
             "components": [
               {
-                "type": "custom-code",
-                "attributes": { "id": "i3uu" },
+                "type": "input",
+                "void": true,
+                "attributes": {
+                  "type": "hidden",
+                  "id": "anPageName",
+                  "name": "page",
+                  "value": "header"
+                }
+              },
+              {
+                "classes": ["container-center-horizontal"],
                 "components": [
                   {
-                    "type": "input",
-                    "void": true,
-                    "attributes": {
-                      "type": "hidden",
-                      "id": "anPageName",
-                      "name": "page",
-                      "value": "header"
-                    }
-                  },
-                  {
-                    "classes": ["container-center-horizontal"],
+                    "classes": ["header", "screen"],
                     "components": [
                       {
-                        "classes": ["header", "screen"],
+                        "type": "image",
+                        "resizable": { "ratioDefault": 1 },
+                        "classes": ["dfx-logo"],
+                        "attributes": {
+                          "src": "https://content.dfx.swiss/img/dfx-logo.svg",
+                          "alt": "DFX-Logo"
+                        }
+                      },
+                      {
+                        "classes": ["nav"],
                         "components": [
                           {
-                            "type": "image",
-                            "resizable": { "ratioDefault": 1 },
-                            "classes": ["dfx-logo"],
-                            "attributes": {
-                              "src": "https://content.dfx.swiss/img/dfx-logo.svg",
-                              "alt": "DFX-Logo"
-                            }
+                            "type": "text",
+                            "classes": ["de-en", "valign-text-middle"],
+                            "components": [
+                              { "type": "textnode", "content": "DE / EN" }
+                            ]
                           },
                           {
-                            "classes": ["nav"],
+                            "classes": ["frame-2"],
                             "components": [
                               {
                                 "type": "text",
-                                "classes": ["de-en", "valign-text-middle"],
+                                "classes": ["menu"],
                                 "components": [
-                                  { "type": "textnode", "content": "DE / EN" }
-                                ]
-                              },
-                              {
-                                "classes": ["frame-2"],
-                                "components": [
-                                  {
-                                    "type": "text",
-                                    "classes": ["menu"],
-                                    "components": [
-                                      {
-                                        "type": "textnode",
-                                        "content": "Menu +"
-                                      }
-                                    ]
-                                  }
+                                  { "type": "textnode", "content": "Menu +" }
                                 ]
                               }
                             ]
@@ -867,339 +857,477 @@
                       }
                     ]
                   }
-                ],
-                "custom-code-plugin__code": "<body style=\"margin: 0; background: #072440\">\n  <input type=\"hidden\" id=\"anPageName\" name=\"page\" value=\"header\" />\n  <div class=\"container-center-horizontal\">\n    <div class=\"header screen\">\n      <img class=\"dfx-logo\" src=\"https://content.dfx.swiss/img/dfx-logo.svg\" alt=\"DFX-Logo\" />\n      <div class=\"nav\">\n        <div class=\"de-en valign-text-middle\">DE / EN</div>\n        <div class=\"frame-2\">\n          <div class=\"menu\">Menu +</div>\n        </div>\n      </div>\n    </div>\n  </div>\n</body>\n\n<style>\n@import url(\"https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css\");\n@import url(\"https://fonts.googleapis.com/css?family=Inter:800\");\n/* The following line is used to measure usage of this code. You can remove it if you want. */\n@import url(\"https://px.animaapp.com/64e0f5efa812e5206a399b37.64e0f5f0a812e5206a399b3a.qvAiCva.hcp.png\");\n\n\n\n.screen a {\n  display: contents;\n  text-decoration: none;\n}\n\n.container-center-horizontal {\n  display: flex;\n  flex-direction: row;\n  justify-content: center;\n  pointer-events: none;\n  width: 100%;\n}\n\n.container-center-horizontal > * {\n  flex-shrink: 0;\n  pointer-events: auto;\n}\n\n.valign-text-middle {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n}\n\n* {\n  box-sizing: border-box;\n}\n/* screen - header */\n\n.header {\n  align-items: flex-start;\n  background-color: var(--dfx-blue-800);\n  border: 1px none;\n  display: flex;\n  gap: 302px;\n  height: 163px;\n  padding: 0 160px;\n  width: 1440px;\n}\n\n.header .dfx-logo {\n  height: 37px;\n  margin-left: 501px;\n  margin-top: 63px;\n  width: 117px;\n}\n\n.header .nav {\n  align-items: center;\n  display: inline-flex;\n  flex-wrap: wrap;\n  gap: 18px 18px;\n  justify-content: center;\n  margin-top: 63px;\n  position: relative;\n}\n\n.header .de-en {\n  color: var(--white);\n  font-family: var(--font-family-inter);\n  font-size: var(--font-size-m);\n  font-weight: 800;\n  height: 25.49px;\n  letter-spacing: 0;\n  line-height: normal;\n  position: relative;\n  text-align: center;\n  width: 72px;\n}\n\n.header .frame-2 {\n  align-items: center;\n  background-color: #f5516c;\n  border-radius: 5px;\n  display: inline-flex;\n  flex: 0 0 auto;\n  gap: 10px;\n  height: 37px;\n  justify-content: center;\n  padding: 10px 25px;\n  position: relative;\n}\n\n.header .menu {\n  color: var(--white);\n  font-family: var(--font-family-inter);\n  font-size: var(--font-size-m);\n  font-weight: 800;\n  letter-spacing: 0;\n  line-height: normal;\n  margin-top: -2.00px;\n  position: relative;\n  text-align: center;\n  white-space: nowrap;\n  width: fit-content;\n}\n:root { \n  --dfx-blue-800: #072440;\n  --white: #ffffff;\n  --white-color: #ffffff;\n \n  --font-size-m: 16px;\n \n  --font-family-inter: \"Inter\", Helvetica;\n}\n\n\n\n</style>"
+                ]
               },
               {
-                "type": "custom-code",
-                "attributes": { "id": "i5j61" },
-                "components": [],
-                "custom-code-plugin__code": "<head>\n  <meta charset=\"utf-8\" />\n  <!--<meta name=description content=\"This site was generated with Anima. www.animaapp.com\"/>-->\n  <!-- <link rel=\"shortcut icon\" type=image/png href=\"https://animaproject.s3.amazonaws.com/home/favicon.png\" /> -->\n  <meta name=\"viewport\" content=\"width=1440, maximum-scale=1.0\" />\n  <link rel=\"shortcut icon\" type=\"image/png\" href=\"https://animaproject.s3.amazonaws.com/home/favicon.png\" />\n  <meta name=\"og:type\" content=\"website\" />\n  <meta name=\"twitter:card\" content=\"photo\" />\n  <link rel=\"stylesheet\" type=\"text/css\" href=\"css/dfx-page-1.css\" />\n  <link rel=\"stylesheet\" type=\"text/css\" href=\"css/styleguide.css\" />\n  <link rel=\"stylesheet\" type=\"text/css\" href=\"css/globals.css\" />\n</head>\n\n<body style=\"margin: 0; background: #072440\">\n  <input type=\"hidden\" id=\"anPageName\" name=\"page\" value=\"dfx-page-1\" />\n  <div class=\"container-center-horizontal\">\n    <div class=\"dfx-page-1 screen\">\n      <div class=\"master-i-phone-14\">\n        <div class=\"flex-row\">\n          <div class=\"rectangle-5\"></div>\n          <p class=\"access-all-dfx-servi\">\n            <span class=\"span\">Access all </span><span class=\"span-1\">DFX SERVICES</span><span class=\"span\"> with this\n              easy </span><span class=\"span-1\">TOOLBOX</span>\n          </p>\n        </div>\n        <div class=\"frame-container\">\n          <div class=\"frame\">\n            <div class=\"rectangle\"></div>\n            <div class=\"rectangle\"></div>\n            <div class=\"rectangle\"></div>\n            <div class=\"rectangle\"></div>\n          </div>\n          <div class=\"frame\">\n            <img class=\"frame-item\" src=\"img/buy@2x.png\" alt=\"BUY\" />\n            <img class=\"frame-item\" src=\"img/sell@2x.png\" alt=\"SELL\" />\n            <img class=\"frame-item\" src=\"img/convert@2x.png\" alt=\"CONVERT\" />\n            <img class=\"frame-item\" src=\"img/send@2x.png\" alt=\"SEND\" />\n          </div>\n        </div>\n        <img class=\"berge-1\" src=\"img/berge-1.png\" alt=\"Berge 1\" />\n      </div>\n      <div class=\"headbox\">\n        <h1 class=\"your-service-from-sw headline\">\n          <span class=\"span-2 headline\">Your service from </span><span class=\"span-1 headline\">Switzerland</span><span\n            class=\"span-2 headline\"> for everything around </span><span class=\"span-1 headline\">Bitcoin</span><span\n            class=\"span-2 headline\"> and </span><span class=\"span-1 headline\">Crypto</span><span\n            class=\"span-2 headline\"></span>\n        </h1>\n        <p class=\"buy-sell-convert-send-globally subline\">BUY&nbsp;&nbsp;• SELL • CONVERT • SEND GLOBALLY</p>\n      </div>\n    </div>\n  </div>\n</body>\n<style>\n/* screen - dfx-page-1 */\n\n.dfx-page-1 {\n  align-items: flex-start;\n  background-color: var(--dfx-blue);\n  border: 1px none;\n  display: flex;\n  gap: 216px;\n  height: 1024px;\n  padding: 88px 160px;\n  width: 1440px;\n}\n\n.dfx-page-1 .master-i-phone-14 {\n  align-items: center;\n  background-color: #f7f7f7;\n  border-radius: 5px;\n  box-shadow: 0px 0px 29px #ffffff;\n  display: flex;\n  flex-direction: column;\n  gap: 53px;\n  height: 701px;\n  margin-left: 14px;\n  margin-top: 147px;\n  overflow: hidden;\n  width: 400px;\n}\n\n.dfx-page-1 .flex-row {\n  align-items: flex-start;\n  display: flex;\n  gap: 12px;\n  height: 63px;\n  margin-top: 54px;\n  min-width: 360px;\n}\n\n.dfx-page-1 .rectangle-5 {\n  align-self: flex-end;\n  background-color: var(--dfx-red);\n  height: 62px;\n  width: 11px;\n}\n\n.dfx-page-1 .access-all-dfx-servi {\n  color: transparent;\n  font-family: var(--font-family-inter);\n  font-size: var(--font-size-s);\n  font-weight: 800;\n  letter-spacing: 0;\n  line-height: normal;\n  min-height: 62px;\n  width: 337px;\n}\n\n.dfx-page-1 .span {\n  color: var(--dfx-blue);\n}\n\n.dfx-page-1 .span-1 {\n  color: var(--dfx-red);\n}\n\n.dfx-page-1 .frame-container {\n  height: 360px;\n  position: relative;\n  width: 360px;\n}\n\n.dfx-page-1 .frame {\n  align-items: flex-start;\n  display: flex;\n  flex-wrap: wrap;\n  gap: 10px 10px;\n  left: 0;\n  position: absolute;\n  top: 0;\n  width: 360px;\n}\n\n.dfx-page-1 .rectangle {\n  background-color: var(--dfx-blue);\n  border-radius: 5px;\n  box-shadow: 0px 0px 5px 3px #00000040;\n  height: 175px;\n  position: relative;\n  width: 175px;\n}\n\n.dfx-page-1 .frame-item {\n  height: 175px;\n  object-fit: cover;\n  position: relative;\n  width: 175px;\n}\n\n.dfx-page-1 .berge-1 {\n  height: 118px;\n  object-fit: cover;\n  width: 400px;\n}\n\n.dfx-page-1 .headbox {\n  align-items: flex-start;\n  display: inline-flex;\n  flex-direction: column;\n  gap: 20px;\n  margin-top: 345px;\n  position: relative;\n}\n\n.dfx-page-1 .your-service-from-sw {\n  color: transparent;\n  font-weight: 800;\n  line-height: normal;\n  margin-top: -1.00px;\n  position: relative;\n  text-align: right;\n  width: 490px;\n}\n\n.dfx-page-1 .span-2 {\n  color: var(--white);\n}\n\n.dfx-page-1 .buy-sell-convert-send-globally {\n  color: var(--white);\n  font-weight: 400;\n  line-height: normal;\n  position: relative;\n  width: 490px;\n}\n@import url(\"https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css\");\n@import url(\"https://fonts.googleapis.com/css?family=Inter:400,800\");\n/* The following line is used to measure usage of this code. You can remove it if you want. */\n@import url(\"https://px.animaapp.com/64e0f5efa812e5206a399b37.64e0f5f0a812e5206a399b3a.qvAiCva.hcp.png\");\n\n\n\n.screen a {\n  display: contents;\n  text-decoration: none;\n}\n\n.container-center-horizontal {\n  display: flex;\n  flex-direction: row;\n  justify-content: center;\n  pointer-events: none;\n  width: 100%;\n}\n\n.container-center-horizontal > * {\n  flex-shrink: 0;\n  pointer-events: auto;\n}\n\n* {\n  box-sizing: border-box;\n}\n:root { \n  --black: #000000;\n  --dfx-blue: #072440;\n  --dfx-blue-800: #072440;\n  --dfx-red: #f5516c;\n  --white: #ffffff;\n  --white-color: #ffffff;\n \n  --font-size-m: 53px;\n  --font-size-s: 26px;\n  --font-size-xs: 23px;\n \n  --font-family-inter: \"Inter\", Helvetica;\n}\n.headline {\n  font-family: var(--font-family-inter);\n  font-size: var(--font-size-m);\n  font-style: normal;\n  font-weight: 800;\n  letter-spacing: 0;\n}\n\n.subline {\n  font-family: var(--font-family-inter);\n  font-size: var(--font-size-xs);\n  font-style: normal;\n  font-weight: 400;\n  letter-spacing: 0;\n}\n\n\n\n</style>"
+                "type": "input",
+                "void": true,
+                "attributes": {
+                  "type": "hidden",
+                  "id": "anPageName-2",
+                  "name": "page",
+                  "value": "dfx-page-1"
+                }
               },
               {
-                "type": "custom-code",
-                "attributes": { "id": "iwe8q6" },
+                "classes": ["container-center-horizontal"],
                 "components": [
                   {
-                    "type": "input",
-                    "void": true,
-                    "attributes": {
-                      "type": "hidden",
-                      "id": "anPageName-4",
-                      "name": "page",
-                      "value": "dfx-page-1"
-                    }
-                  },
-                  {
-                    "classes": ["container-center-horizontal"],
+                    "classes": ["dfx-page-1", "screen"],
                     "components": [
                       {
-                        "classes": ["dfx-page-1", "screen"],
+                        "classes": ["master-i-phone-14"],
                         "components": [
                           {
-                            "classes": ["master-i-phone-14"],
+                            "classes": ["flex-row"],
                             "components": [
+                              { "classes": ["rectangle-5"] },
                               {
-                                "classes": ["flex-row"],
+                                "tagName": "p",
+                                "classes": ["access-all-dfx-servi"],
                                 "components": [
-                                  { "classes": ["rectangle-5"] },
                                   {
-                                    "tagName": "p",
-                                    "classes": ["access-all-dfx-servi"],
+                                    "tagName": "span",
+                                    "type": "text",
+                                    "classes": ["span"],
                                     "components": [
                                       {
-                                        "tagName": "span",
-                                        "type": "text",
-                                        "classes": ["span"],
-                                        "components": [
-                                          {
-                                            "type": "textnode",
-                                            "content": "Access all "
-                                          }
-                                        ]
-                                      },
-                                      {
-                                        "tagName": "span",
-                                        "type": "text",
-                                        "classes": ["span-1"],
-                                        "components": [
-                                          {
-                                            "type": "textnode",
-                                            "content": "DFX SERVICES"
-                                          }
-                                        ]
-                                      },
-                                      {
-                                        "tagName": "span",
-                                        "type": "text",
-                                        "classes": ["span"],
-                                        "components": [
-                                          {
-                                            "type": "textnode",
-                                            "content": " with this\n              easy "
-                                          }
-                                        ]
-                                      },
-                                      {
-                                        "tagName": "span",
-                                        "type": "text",
-                                        "classes": ["span-1"],
-                                        "components": [
-                                          {
-                                            "type": "textnode",
-                                            "content": "TOOLBOX"
-                                          }
-                                        ]
+                                        "type": "textnode",
+                                        "content": "Access all "
                                       }
-                                    ]
-                                  }
-                                ]
-                              },
-                              {
-                                "classes": ["frame-container"],
-                                "components": [
-                                  {
-                                    "classes": ["frame"],
-                                    "components": [
-                                      { "classes": ["rectangle"] },
-                                      { "classes": ["rectangle"] },
-                                      { "classes": ["rectangle"] },
-                                      { "classes": ["rectangle"] }
                                     ]
                                   },
                                   {
-                                    "classes": ["frame"],
+                                    "tagName": "span",
+                                    "type": "text",
+                                    "classes": ["span-1"],
                                     "components": [
                                       {
-                                        "type": "image",
-                                        "resizable": { "ratioDefault": 1 },
-                                        "classes": ["frame-item"],
-                                        "attributes": {
-                                          "src": "https://content.dfx.swiss/img/buy@2x.png",
-                                          "alt": "BUY"
-                                        }
-                                      },
+                                        "type": "textnode",
+                                        "content": "DFX SERVICES"
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "tagName": "span",
+                                    "type": "text",
+                                    "classes": ["span"],
+                                    "components": [
                                       {
-                                        "type": "image",
-                                        "resizable": { "ratioDefault": 1 },
-                                        "classes": ["frame-item"],
-                                        "attributes": {
-                                          "src": "https://content.dfx.swiss/img/sell@2x.png",
-                                          "alt": "SELL"
-                                        }
-                                      },
+                                        "type": "textnode",
+                                        "content": " with this\n              easy "
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "tagName": "span",
+                                    "type": "text",
+                                    "classes": ["span-1"],
+                                    "components": [
                                       {
-                                        "type": "image",
-                                        "resizable": { "ratioDefault": 1 },
-                                        "classes": ["frame-item"],
-                                        "attributes": {
-                                          "src": "https://content.dfx.swiss/img/convert@2x.png",
-                                          "alt": "CONVERT"
-                                        }
-                                      },
-                                      {
-                                        "type": "image",
-                                        "resizable": { "ratioDefault": 1 },
-                                        "classes": ["frame-item"],
-                                        "attributes": {
-                                          "src": "https://content.dfx.swiss/img/send@2x.png",
-                                          "alt": "SEND"
-                                        }
+                                        "type": "textnode",
+                                        "content": "TOOLBOX"
                                       }
                                     ]
                                   }
                                 ]
-                              },
-                              {
-                                "type": "image",
-                                "resizable": { "ratioDefault": 1 },
-                                "classes": ["berge-1"],
-                                "attributes": {
-                                  "src": "https://content.dfx.swiss/img/berge-1.png",
-                                  "alt": "Berge 1"
-                                }
                               }
                             ]
                           },
+                          {
+                            "classes": ["frame-container"],
+                            "components": [
+                              {
+                                "classes": ["frame"],
+                                "components": [
+                                  { "classes": ["rectangle"] },
+                                  { "classes": ["rectangle"] },
+                                  { "classes": ["rectangle"] },
+                                  { "classes": ["rectangle"] }
+                                ]
+                              },
+                              {
+                                "classes": ["frame"],
+                                "components": [
+                                  {
+                                    "type": "image",
+                                    "resizable": { "ratioDefault": 1 },
+                                    "classes": ["frame-item"],
+                                    "attributes": {
+                                      "src": "https://content.dfx.swiss/img/buy@2x.png",
+                                      "alt": "BUY"
+                                    }
+                                  },
+                                  {
+                                    "type": "image",
+                                    "resizable": { "ratioDefault": 1 },
+                                    "classes": ["frame-item"],
+                                    "attributes": {
+                                      "src": "https://content.dfx.swiss/img/sell@2x.png",
+                                      "alt": "SELL"
+                                    }
+                                  },
+                                  {
+                                    "type": "image",
+                                    "resizable": { "ratioDefault": 1 },
+                                    "classes": ["frame-item"],
+                                    "attributes": {
+                                      "src": "https://content.dfx.swiss/img/convert@2x.png",
+                                      "alt": "CONVERT"
+                                    }
+                                  },
+                                  {
+                                    "type": "image",
+                                    "resizable": { "ratioDefault": 1 },
+                                    "classes": ["frame-item"],
+                                    "attributes": {
+                                      "src": "https://content.dfx.swiss/img/send@2x.png",
+                                      "alt": "SEND"
+                                    }
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "type": "image",
+                            "resizable": { "ratioDefault": 1 },
+                            "classes": ["berge-1"],
+                            "attributes": {
+                              "src": "https://content.dfx.swiss/img/berge-1.png",
+                              "alt": "Berge 1"
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "classes": ["headbox"],
+                        "components": [
+                          {
+                            "tagName": "h1",
+                            "classes": ["your-service-from-sw", "headline"],
+                            "components": [
+                              {
+                                "tagName": "span",
+                                "type": "text",
+                                "classes": ["span-2", "headline"],
+                                "components": [
+                                  {
+                                    "type": "textnode",
+                                    "content": "Your service from "
+                                  }
+                                ]
+                              },
+                              {
+                                "tagName": "span",
+                                "type": "text",
+                                "classes": ["span-1", "headline"],
+                                "components": [
+                                  {
+                                    "type": "textnode",
+                                    "content": "Switzerland"
+                                  }
+                                ]
+                              },
+                              {
+                                "tagName": "span",
+                                "type": "text",
+                                "classes": ["span-2", "headline"],
+                                "components": [
+                                  {
+                                    "type": "textnode",
+                                    "content": " for everything around "
+                                  }
+                                ]
+                              },
+                              {
+                                "tagName": "span",
+                                "type": "text",
+                                "classes": ["span-1", "headline"],
+                                "components": [
+                                  { "type": "textnode", "content": "Bitcoin" }
+                                ]
+                              },
+                              {
+                                "tagName": "span",
+                                "type": "text",
+                                "classes": ["span-2", "headline"],
+                                "components": [
+                                  { "type": "textnode", "content": " and " }
+                                ]
+                              },
+                              {
+                                "tagName": "span",
+                                "type": "text",
+                                "classes": ["span-1", "headline"],
+                                "components": [
+                                  { "type": "textnode", "content": "Crypto" }
+                                ]
+                              },
+                              {
+                                "tagName": "span",
+                                "classes": ["span-2", "headline"]
+                              }
+                            ]
+                          },
+                          {
+                            "tagName": "p",
+                            "type": "text",
+                            "classes": [
+                              "buy-sell-convert-send-globally",
+                              "subline"
+                            ],
+                            "components": [
+                              {
+                                "type": "textnode",
+                                "content": "BUY  • SELL • CONVERT • SEND GLOBALLY"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "input",
+                "void": true,
+                "attributes": {
+                  "type": "hidden",
+                  "id": "anPageName-3",
+                  "name": "page",
+                  "value": "dfx-page-2"
+                }
+              },
+              {
+                "classes": ["container-center-horizontal"],
+                "components": [
+                  {
+                    "classes": ["dfx-page-2", "screen"],
+                    "components": [
+                      {
+                        "classes": ["overlap-group2"],
+                        "components": [
                           {
                             "classes": ["headbox"],
                             "components": [
                               {
                                 "tagName": "h1",
-                                "classes": ["your-service-from-sw", "headline"],
+                                "classes": ["title", "headline"],
                                 "components": [
                                   {
                                     "tagName": "span",
                                     "type": "text",
-                                    "classes": ["span-2", "headline"],
+                                    "classes": ["span0", "headline"],
                                     "components": [
                                       {
                                         "type": "textnode",
-                                        "content": "Your service from "
+                                        "content": "Upgrade "
                                       }
                                     ]
                                   },
                                   {
                                     "tagName": "span",
                                     "type": "text",
-                                    "classes": ["span-1", "headline"],
+                                    "classes": ["span", "headline"],
                                     "components": [
                                       {
                                         "type": "textnode",
-                                        "content": "Switzerland"
+                                        "content": "your Community"
                                       }
                                     ]
-                                  },
-                                  {
-                                    "tagName": "span",
-                                    "type": "text",
-                                    "classes": ["span-2", "headline"],
-                                    "components": [
-                                      {
-                                        "type": "textnode",
-                                        "content": " for everything around "
-                                      }
-                                    ]
-                                  },
-                                  {
-                                    "tagName": "span",
-                                    "type": "text",
-                                    "classes": ["span-1", "headline"],
-                                    "components": [
-                                      {
-                                        "type": "textnode",
-                                        "content": "Bitcoin"
-                                      }
-                                    ]
-                                  },
-                                  {
-                                    "tagName": "span",
-                                    "type": "text",
-                                    "classes": ["span-2", "headline"],
-                                    "components": [
-                                      { "type": "textnode", "content": " and " }
-                                    ]
-                                  },
-                                  {
-                                    "tagName": "span",
-                                    "type": "text",
-                                    "classes": ["span-1", "headline"],
-                                    "components": [
-                                      {
-                                        "type": "textnode",
-                                        "content": "Crypto"
-                                      }
-                                    ]
-                                  },
-                                  {
-                                    "tagName": "span",
-                                    "classes": ["span-2", "headline"]
                                   }
                                 ]
                               },
                               {
                                 "tagName": "p",
-                                "type": "text",
-                                "classes": [
-                                  "buy-sell-convert-send-globally",
-                                  "subline"
-                                ],
+                                "classes": ["with-our-toolbox-for", "subline"],
                                 "components": [
                                   {
-                                    "type": "textnode",
-                                    "content": "BUY  • SELL • CONVERT • SEND GLOBALLY"
+                                    "tagName": "span",
+                                    "type": "text",
+                                    "classes": ["subline"],
+                                    "components": [
+                                      {
+                                        "type": "textnode",
+                                        "content": "WITH OUR TOOLBOX FOR YOUR WEBSITE - "
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "tagName": "span",
+                                    "type": "text",
+                                    "classes": ["span1"],
+                                    "components": [
+                                      {
+                                        "type": "textnode",
+                                        "content": "learn more"
+                                      }
+                                    ]
                                   }
                                 ]
                               }
                             ]
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                ],
-                "custom-code-plugin__code": "<body style=\"margin: 0; background: #072440\">\n  <input type=\"hidden\" id=\"anPageName\" name=\"page\" value=\"dfx-page-1\" />\n  <div class=\"container-center-horizontal\">\n    <div class=\"dfx-page-1 screen\">\n      <div class=\"master-i-phone-14\">\n        <div class=\"flex-row\">\n          <div class=\"rectangle-5\"></div>\n          <p class=\"access-all-dfx-servi\">\n            <span class=\"span\">Access all </span><span class=\"span-1\">DFX SERVICES</span><span class=\"span\"> with this\n              easy </span><span class=\"span-1\">TOOLBOX</span>\n          </p>\n        </div>\n        <div class=\"frame-container\">\n          <div class=\"frame\">\n            <div class=\"rectangle\"></div>\n            <div class=\"rectangle\"></div>\n            <div class=\"rectangle\"></div>\n            <div class=\"rectangle\"></div>\n          </div>\n          <div class=\"frame\">\n            <img class=\"frame-item\" src=\"https://content.dfx.swiss/img/buy@2x.png\" alt=\"BUY\" />\n            <img class=\"frame-item\" src=\"https://content.dfx.swiss/img/sell@2x.png\" alt=\"SELL\" />\n            <img class=\"frame-item\" src=\"https://content.dfx.swiss/img/convert@2x.png\" alt=\"CONVERT\" />\n            <img class=\"frame-item\" src=\"https://content.dfx.swiss/img/send@2x.png\" alt=\"SEND\" />\n          </div>\n        </div>\n        <img class=\"berge-1\" src=\"https://content.dfx.swiss/img/berge-1.png\" alt=\"Berge 1\" />\n      </div>\n      <div class=\"headbox\">\n        <h1 class=\"your-service-from-sw headline\">\n          <span class=\"span-2 headline\">Your service from </span><span class=\"span-1 headline\">Switzerland</span><span\n            class=\"span-2 headline\"> for everything around </span><span class=\"span-1 headline\">Bitcoin</span><span\n            class=\"span-2 headline\"> and </span><span class=\"span-1 headline\">Crypto</span><span\n            class=\"span-2 headline\"></span>\n        </h1>\n        <p class=\"buy-sell-convert-send-globally subline\">BUY&nbsp;&nbsp;• SELL • CONVERT • SEND GLOBALLY</p>\n      </div>\n    </div>\n  </div>\n</body>\n<style>\n/* screen - dfx-page-1 */\n\n.dfx-page-1 {\n  align-items: flex-start;\n  background-color: var(--dfx-blue);\n  border: 1px none;\n  display: flex;\n  gap: 216px;\n  height: 1024px;\n  padding: 88px 160px;\n  width: 1440px;\n}\n\n.dfx-page-1 .master-i-phone-14 {\n  align-items: center;\n  background-color: #f7f7f7;\n  border-radius: 5px;\n  box-shadow: 0px 0px 29px #ffffff;\n  display: flex;\n  flex-direction: column;\n  gap: 53px;\n  height: 701px;\n  margin-left: 14px;\n  margin-top: 147px;\n  overflow: hidden;\n  width: 400px;\n}\n\n.dfx-page-1 .flex-row {\n  align-items: flex-start;\n  display: flex;\n  gap: 12px;\n  height: 63px;\n  margin-top: 54px;\n  min-width: 360px;\n}\n\n.dfx-page-1 .rectangle-5 {\n  align-self: flex-end;\n  background-color: var(--dfx-red);\n  height: 62px;\n  width: 11px;\n}\n\n.dfx-page-1 .access-all-dfx-servi {\n  color: transparent;\n  font-family: var(--font-family-inter);\n  font-size: var(--font-size-s);\n  font-weight: 800;\n  letter-spacing: 0;\n  line-height: normal;\n  min-height: 62px;\n  width: 337px;\n}\n\n.dfx-page-1 .span {\n  color: var(--dfx-blue);\n}\n\n.dfx-page-1 .span-1 {\n  color: var(--dfx-red);\n}\n\n.dfx-page-1 .frame-container {\n  height: 360px;\n  position: relative;\n  width: 360px;\n}\n\n.dfx-page-1 .frame {\n  align-items: flex-start;\n  display: flex;\n  flex-wrap: wrap;\n  gap: 10px 10px;\n  left: 0;\n  position: absolute;\n  top: 0;\n  width: 360px;\n}\n\n.dfx-page-1 .rectangle {\n  background-color: var(--dfx-blue);\n  border-radius: 5px;\n  box-shadow: 0px 0px 5px 3px #00000040;\n  height: 175px;\n  position: relative;\n  width: 175px;\n}\n\n.dfx-page-1 .frame-item {\n  height: 175px;\n  object-fit: cover;\n  position: relative;\n  width: 175px;\n}\n\n.dfx-page-1 .berge-1 {\n  height: 118px;\n  object-fit: cover;\n  width: 400px;\n}\n\n.dfx-page-1 .headbox {\n  align-items: flex-start;\n  display: inline-flex;\n  flex-direction: column;\n  gap: 20px;\n  margin-top: 345px;\n  position: relative;\n}\n\n.dfx-page-1 .your-service-from-sw {\n  color: transparent;\n  font-weight: 800;\n  line-height: normal;\n  margin-top: -1.00px;\n  position: relative;\n  text-align: right;\n  width: 490px;\n}\n\n.dfx-page-1 .span-2 {\n  color: var(--white);\n}\n\n.dfx-page-1 .buy-sell-convert-send-globally {\n  color: var(--white);\n  font-weight: 400;\n  line-height: normal;\n  position: relative;\n  width: 490px;\n}\n@import url(\"https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css\");\n@import url(\"https://fonts.googleapis.com/css?family=Inter:400,800\");\n/* The following line is used to measure usage of this code. You can remove it if you want. */\n@import url(\"https://px.animaapp.com/64e0f5efa812e5206a399b37.64e0f5f0a812e5206a399b3a.qvAiCva.hcp.png\");\n\n\n\n.screen a {\n  display: contents;\n  text-decoration: none;\n}\n\n.container-center-horizontal {\n  display: flex;\n  flex-direction: row;\n  justify-content: center;\n  pointer-events: none;\n  width: 100%;\n}\n\n.container-center-horizontal > * {\n  flex-shrink: 0;\n  pointer-events: auto;\n}\n\n* {\n  box-sizing: border-box;\n}\n:root { \n  --black: #000000;\n  --dfx-blue: #072440;\n  --dfx-blue-800: #072440;\n  --dfx-red: #f5516c;\n  --white: #ffffff;\n  --white-color: #ffffff;\n \n  --font-size-m: 53px;\n  --font-size-s: 26px;\n  --font-size-xs: 23px;\n \n  --font-family-inter: \"Inter\", Helvetica;\n}\n.headline {\n  font-family: var(--font-family-inter);\n  font-size: var(--font-size-m);\n  font-style: normal;\n  font-weight: 800;\n  letter-spacing: 0;\n}\n\n.subline {\n  font-family: var(--font-family-inter);\n  font-size: var(--font-size-xs);\n  font-style: normal;\n  font-weight: 400;\n  letter-spacing: 0;\n}\n\n\n\n</style>"
-              },
-              {
-                "type": "custom-code",
-                "attributes": { "id": "i8nabl" },
-                "components": [
-                  {
-                    "type": "input",
-                    "void": true,
-                    "attributes": {
-                      "type": "hidden",
-                      "id": "anPageName-5",
-                      "name": "page",
-                      "value": "dfx-page-2"
-                    }
-                  },
-                  {
-                    "classes": ["container-center-horizontal"],
-                    "components": [
-                      {
-                        "classes": ["dfx-page-2", "screen"],
-                        "components": [
+                          },
                           {
-                            "classes": ["overlap-group2"],
+                            "classes": ["overlap-group1"],
                             "components": [
                               {
-                                "classes": ["headbox"],
+                                "classes": ["master-i-phone-15"],
                                 "components": [
                                   {
-                                    "tagName": "h1",
-                                    "classes": ["title", "headline"],
+                                    "classes": ["overlap-group"],
                                     "components": [
                                       {
-                                        "tagName": "span",
-                                        "type": "text",
-                                        "classes": ["span0", "headline"],
+                                        "type": "image",
+                                        "resizable": { "ratioDefault": 1 },
+                                        "classes": ["berge-1"],
+                                        "attributes": {
+                                          "src": "https://content.dfx.swiss/img/berge-1.png",
+                                          "alt": "Berge 1"
+                                        }
+                                      },
+                                      {
+                                        "classes": ["frame"],
                                         "components": [
-                                          {
-                                            "type": "textnode",
-                                            "content": "Upgrade "
-                                          }
+                                          { "classes": ["rectangle"] },
+                                          { "classes": ["rectangle"] },
+                                          { "classes": ["rectangle"] },
+                                          { "classes": ["rectangle"] }
                                         ]
                                       },
                                       {
-                                        "tagName": "span",
-                                        "type": "text",
-                                        "classes": ["span", "headline"],
+                                        "classes": ["frame"],
                                         "components": [
                                           {
-                                            "type": "textnode",
-                                            "content": "your Community"
-                                          }
-                                        ]
-                                      }
-                                    ]
-                                  },
-                                  {
-                                    "tagName": "p",
-                                    "classes": [
-                                      "with-our-toolbox-for",
-                                      "subline"
-                                    ],
-                                    "components": [
-                                      {
-                                        "tagName": "span",
-                                        "type": "text",
-                                        "classes": ["subline"],
-                                        "components": [
+                                            "type": "image",
+                                            "resizable": { "ratioDefault": 1 },
+                                            "classes": ["frame-item"],
+                                            "attributes": {
+                                              "src": "https://content.dfx.swiss/img/trezor@2x.png",
+                                              "alt": "Trezor"
+                                            }
+                                          },
                                           {
-                                            "type": "textnode",
-                                            "content": "WITH OUR TOOLBOX FOR YOUR WEBSITE - "
+                                            "type": "image",
+                                            "resizable": { "ratioDefault": 1 },
+                                            "classes": ["frame-item"],
+                                            "attributes": {
+                                              "src": "https://content.dfx.swiss/img/app@2x.png",
+                                              "alt": "App"
+                                            }
+                                          },
+                                          {
+                                            "type": "image",
+                                            "resizable": { "ratioDefault": 1 },
+                                            "classes": ["frame-item"],
+                                            "attributes": {
+                                              "src": "https://content.dfx.swiss/img/ledger@2x.png",
+                                              "alt": "Ledger"
+                                            }
+                                          },
+                                          {
+                                            "type": "image",
+                                            "resizable": { "ratioDefault": 1 },
+                                            "classes": ["frame-item"],
+                                            "attributes": {
+                                              "src": "https://content.dfx.swiss/img/bitbox@2x.png",
+                                              "alt": "BitBox"
+                                            }
                                           }
                                         ]
                                       },
+                                      { "classes": ["rectangle-7"] },
+                                      { "classes": ["rectangle-5"] },
                                       {
-                                        "tagName": "span",
-                                        "type": "text",
-                                        "classes": ["span1"],
+                                        "tagName": "p",
+                                        "classes": [
+                                          "implement-this-toolbox-in-your-homepage"
+                                        ],
                                         "components": [
                                           {
-                                            "type": "textnode",
-                                            "content": "learn more"
+                                            "tagName": "span",
+                                            "type": "text",
+                                            "classes": ["span-2"],
+                                            "components": [
+                                              {
+                                                "type": "textnode",
+                                                "content": "Implement this"
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "tagName": "span",
+                                            "type": "text",
+                                            "classes": [
+                                              "inter-extra-bold-big-stone-26px"
+                                            ],
+                                            "components": [
+                                              {
+                                                "type": "textnode",
+                                                "content": " "
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "tagName": "span",
+                                            "type": "text",
+                                            "classes": ["span"],
+                                            "components": [
+                                              {
+                                                "type": "textnode",
+                                                "content": "TOOLBOX"
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "tagName": "span",
+                                            "type": "text",
+                                            "classes": [
+                                              "inter-extra-bold-big-stone-26px"
+                                            ],
+                                            "components": [
+                                              {
+                                                "type": "textnode",
+                                                "content": " "
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "tagName": "span",
+                                            "type": "text",
+                                            "classes": ["span-2"],
+                                            "components": [
+                                              {
+                                                "type": "textnode",
+                                                "content": "in"
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "tagName": "span",
+                                            "type": "text",
+                                            "classes": [
+                                              "inter-extra-bold-big-stone-26px"
+                                            ],
+                                            "components": [
+                                              {
+                                                "type": "textnode",
+                                                "content": " "
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "tagName": "span",
+                                            "type": "text",
+                                            "classes": ["span"],
+                                            "components": [
+                                              {
+                                                "type": "textnode",
+                                                "content": "YOUR HOMEPAGE"
+                                              }
+                                            ]
                                           }
                                         ]
                                       }
@@ -1208,324 +1336,149 @@
                                 ]
                               },
                               {
-                                "classes": ["overlap-group1"],
+                                "classes": ["frame-12"],
                                 "components": [
                                   {
-                                    "classes": ["master-i-phone-15"],
+                                    "classes": ["frame-1"],
                                     "components": [
                                       {
-                                        "classes": ["overlap-group"],
+                                        "type": "image",
+                                        "resizable": { "ratioDefault": 1 },
+                                        "classes": ["x3"],
+                                        "attributes": {
+                                          "src": "https://content.dfx.swiss/img/3@2x.png",
+                                          "alt": "3"
+                                        }
+                                      },
+                                      {
+                                        "type": "text",
+                                        "classes": [
+                                          "fully-adjustable",
+                                          "inter-extra-bold-white-23px"
+                                        ],
                                         "components": [
                                           {
-                                            "type": "image",
-                                            "resizable": { "ratioDefault": 1 },
-                                            "classes": ["berge-1"],
-                                            "attributes": {
-                                              "src": "https://content.dfx.swiss/img/berge-1.png",
-                                              "alt": "Berge 1"
-                                            }
-                                          },
-                                          {
-                                            "classes": ["frame"],
-                                            "components": [
-                                              { "classes": ["rectangle"] },
-                                              { "classes": ["rectangle"] },
-                                              { "classes": ["rectangle"] },
-                                              { "classes": ["rectangle"] }
-                                            ]
-                                          },
-                                          {
-                                            "classes": ["frame"],
-                                            "components": [
-                                              {
-                                                "type": "image",
-                                                "resizable": {
-                                                  "ratioDefault": 1
-                                                },
-                                                "classes": ["frame-item"],
-                                                "attributes": {
-                                                  "src": "https://content.dfx.swiss/img/trezor@2x.png",
-                                                  "alt": "Trezor"
-                                                }
-                                              },
-                                              {
-                                                "type": "image",
-                                                "resizable": {
-                                                  "ratioDefault": 1
-                                                },
-                                                "classes": ["frame-item"],
-                                                "attributes": {
-                                                  "src": "https://content.dfx.swiss/img/app@2x.png",
-                                                  "alt": "App"
-                                                }
-                                              },
-                                              {
-                                                "type": "image",
-                                                "resizable": {
-                                                  "ratioDefault": 1
-                                                },
-                                                "classes": ["frame-item"],
-                                                "attributes": {
-                                                  "src": "https://content.dfx.swiss/img/ledger@2x.png",
-                                                  "alt": "Ledger"
-                                                }
-                                              },
-                                              {
-                                                "type": "image",
-                                                "resizable": {
-                                                  "ratioDefault": 1
-                                                },
-                                                "classes": ["frame-item"],
-                                                "attributes": {
-                                                  "src": "https://content.dfx.swiss/img/bitbox@2x.png",
-                                                  "alt": "BitBox"
-                                                }
-                                              }
-                                            ]
-                                          },
-                                          { "classes": ["rectangle-7"] },
-                                          { "classes": ["rectangle-5"] },
-                                          {
-                                            "tagName": "p",
-                                            "classes": [
-                                              "implement-this-toolbox-in-your-homepage"
-                                            ],
-                                            "components": [
-                                              {
-                                                "tagName": "span",
-                                                "type": "text",
-                                                "classes": ["span-2"],
-                                                "components": [
-                                                  {
-                                                    "type": "textnode",
-                                                    "content": "Implement this"
-                                                  }
-                                                ]
-                                              },
-                                              {
-                                                "tagName": "span",
-                                                "type": "text",
-                                                "classes": [
-                                                  "inter-extra-bold-big-stone-26px"
-                                                ],
-                                                "components": [
-                                                  {
-                                                    "type": "textnode",
-                                                    "content": " "
-                                                  }
-                                                ]
-                                              },
-                                              {
-                                                "tagName": "span",
-                                                "type": "text",
-                                                "classes": ["span"],
-                                                "components": [
-                                                  {
-                                                    "type": "textnode",
-                                                    "content": "TOOLBOX"
-                                                  }
-                                                ]
-                                              },
-                                              {
-                                                "tagName": "span",
-                                                "type": "text",
-                                                "classes": [
-                                                  "inter-extra-bold-big-stone-26px"
-                                                ],
-                                                "components": [
-                                                  {
-                                                    "type": "textnode",
-                                                    "content": " "
-                                                  }
-                                                ]
-                                              },
-                                              {
-                                                "tagName": "span",
-                                                "type": "text",
-                                                "classes": ["span-2"],
-                                                "components": [
-                                                  {
-                                                    "type": "textnode",
-                                                    "content": "in"
-                                                  }
-                                                ]
-                                              },
-                                              {
-                                                "tagName": "span",
-                                                "type": "text",
-                                                "classes": [
-                                                  "inter-extra-bold-big-stone-26px"
-                                                ],
-                                                "components": [
-                                                  {
-                                                    "type": "textnode",
-                                                    "content": " "
-                                                  }
-                                                ]
-                                              },
-                                              {
-                                                "tagName": "span",
-                                                "type": "text",
-                                                "classes": ["span"],
-                                                "components": [
-                                                  {
-                                                    "type": "textnode",
-                                                    "content": "YOUR HOMEPAGE"
-                                                  }
-                                                ]
-                                              }
-                                            ]
+                                            "type": "textnode",
+                                            "content": "fully adjustable"
                                           }
                                         ]
                                       }
                                     ]
                                   },
                                   {
-                                    "classes": ["frame-12"],
+                                    "classes": ["frame-1"],
                                     "components": [
                                       {
-                                        "classes": ["frame-1"],
-                                        "components": [
-                                          {
-                                            "type": "image",
-                                            "resizable": { "ratioDefault": 1 },
-                                            "classes": ["x3"],
-                                            "attributes": {
-                                              "src": "https://content.dfx.swiss/img/3@2x.png",
-                                              "alt": "3"
-                                            }
-                                          },
-                                          {
-                                            "type": "text",
-                                            "classes": [
-                                              "fully-adjustable",
-                                              "inter-extra-bold-white-23px"
-                                            ],
-                                            "components": [
-                                              {
-                                                "type": "textnode",
-                                                "content": "fully adjustable"
-                                              }
-                                            ]
-                                          }
-                                        ]
+                                        "type": "image",
+                                        "resizable": { "ratioDefault": 1 },
+                                        "classes": ["x4"],
+                                        "attributes": {
+                                          "src": "https://content.dfx.swiss/img/4@2x.png",
+                                          "alt": "4"
+                                        }
                                       },
                                       {
-                                        "classes": ["frame-1"],
+                                        "type": "text",
+                                        "classes": [
+                                          "x5-blockchains",
+                                          "inter-extra-bold-white-23px"
+                                        ],
                                         "components": [
                                           {
-                                            "type": "image",
-                                            "resizable": { "ratioDefault": 1 },
-                                            "classes": ["x4"],
-                                            "attributes": {
-                                              "src": "https://content.dfx.swiss/img/4@2x.png",
-                                              "alt": "4"
-                                            }
+                                            "type": "textnode",
+                                            "content": "5"
                                           },
+                                          { "tagName": "br", "void": true },
                                           {
-                                            "type": "text",
-                                            "classes": [
-                                              "x5-blockchains",
-                                              "inter-extra-bold-white-23px"
-                                            ],
-                                            "components": [
-                                              {
-                                                "type": "textnode",
-                                                "content": "5"
-                                              },
-                                              { "tagName": "br", "void": true },
-                                              {
-                                                "type": "textnode",
-                                                "content": "blockchains"
-                                              }
-                                            ]
+                                            "type": "textnode",
+                                            "content": "blockchains"
                                           }
                                         ]
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "classes": ["frame-1"],
+                                    "components": [
+                                      {
+                                        "type": "image",
+                                        "resizable": { "ratioDefault": 1 },
+                                        "classes": ["x1"],
+                                        "attributes": {
+                                          "src": "https://content.dfx.swiss/img/1@2x.png",
+                                          "alt": "1"
+                                        }
                                       },
                                       {
-                                        "classes": ["frame-1"],
+                                        "tagName": "p",
+                                        "type": "text",
+                                        "classes": [
+                                          "x80-coins-token",
+                                          "inter-extra-bold-white-23px"
+                                        ],
                                         "components": [
                                           {
-                                            "type": "image",
-                                            "resizable": { "ratioDefault": 1 },
-                                            "classes": ["x1"],
-                                            "attributes": {
-                                              "src": "https://content.dfx.swiss/img/1@2x.png",
-                                              "alt": "1"
-                                            }
+                                            "type": "textnode",
+                                            "content": "> 80 "
                                           },
+                                          { "tagName": "br", "void": true },
                                           {
-                                            "tagName": "p",
-                                            "type": "text",
-                                            "classes": [
-                                              "x80-coins-token",
-                                              "inter-extra-bold-white-23px"
-                                            ],
-                                            "components": [
-                                              {
-                                                "type": "textnode",
-                                                "content": "> 80 "
-                                              },
-                                              { "tagName": "br", "void": true },
-                                              {
-                                                "type": "textnode",
-                                                "content": "coins & token"
-                                              }
-                                            ]
+                                            "type": "textnode",
+                                            "content": "coins & token"
                                           }
                                         ]
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "classes": ["frame-1"],
+                                    "components": [
+                                      {
+                                        "type": "image",
+                                        "resizable": { "ratioDefault": 1 },
+                                        "classes": ["x2"],
+                                        "attributes": {
+                                          "src": "https://content.dfx.swiss/img/2@2x.png",
+                                          "alt": "2"
+                                        }
                                       },
                                       {
-                                        "classes": ["frame-1"],
+                                        "type": "text",
+                                        "classes": [
+                                          "revenue-share-model",
+                                          "inter-extra-bold-white-23px"
+                                        ],
                                         "components": [
                                           {
-                                            "type": "image",
-                                            "resizable": { "ratioDefault": 1 },
-                                            "classes": ["x2"],
-                                            "attributes": {
-                                              "src": "https://content.dfx.swiss/img/2@2x.png",
-                                              "alt": "2"
-                                            }
-                                          },
-                                          {
-                                            "type": "text",
-                                            "classes": [
-                                              "revenue-share-model",
-                                              "inter-extra-bold-white-23px"
-                                            ],
-                                            "components": [
-                                              {
-                                                "type": "textnode",
-                                                "content": "revenue share model"
-                                              }
-                                            ]
+                                            "type": "textnode",
+                                            "content": "revenue share model"
                                           }
                                         ]
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "classes": ["frame-1"],
+                                    "components": [
+                                      {
+                                        "type": "image",
+                                        "resizable": { "ratioDefault": 1 },
+                                        "classes": ["svg-width245-height2"],
+                                        "attributes": {
+                                          "src": "https://content.dfx.swiss/img/svg-width-245-height-233-viewbox-0-0-245-233-fill-none-xmlns-htt@2x.png",
+                                          "alt": "svg width=245 height=233 viewBox=0 0 245 233 fill=none xmlns=httpwww.w3.org2000svg rect x=0.5 y=0.5 width=244 height=232 rx=43.5 fill=url(#paint0_linear_1582_2798) fill-opacity=0 1"
+                                        }
                                       },
                                       {
-                                        "classes": ["frame-1"],
+                                        "type": "text",
+                                        "classes": [
+                                          "only-3-lines-code",
+                                          "inter-extra-bold-white-23px"
+                                        ],
                                         "components": [
                                           {
-                                            "type": "image",
-                                            "resizable": { "ratioDefault": 1 },
-                                            "classes": ["svg-width245-height2"],
-                                            "attributes": {
-                                              "src": "https://content.dfx.swiss/img/svg-width-245-height-233-viewbox-0-0-245-233-fill-none-xmlns-htt@2x.png",
-                                              "alt": "svg width=245 height=233 viewBox=0 0 245 233 fill=none xmlns=httpwww.w3.org2000svg rect x=0.5 y=0.5 width=244 height=232 rx=43.5 fill=url(#paint0_linear_1582_2798) fill-opacity=0 1"
-                                            }
-                                          },
-                                          {
-                                            "type": "text",
-                                            "classes": [
-                                              "only-3-lines-code",
-                                              "inter-extra-bold-white-23px"
-                                            ],
-                                            "components": [
-                                              {
-                                                "type": "textnode",
-                                                "content": "only 3 lines code"
-                                              }
-                                            ]
+                                            "type": "textnode",
+                                            "content": "only 3 lines code"
                                           }
                                         ]
                                       }
@@ -1539,15 +1492,14 @@
                       }
                     ]
                   }
-                ],
-                "custom-code-plugin__code": "<body style=\"margin: 0; background: #072440\">\n  <input type=\"hidden\" id=\"anPageName\" name=\"page\" value=\"dfx-page-2\" />\n  <div class=\"container-center-horizontal\">\n    <div class=\"dfx-page-2 screen\">\n      <div class=\"overlap-group2\">\n        <div class=\"headbox\">\n          <h1 class=\"title headline\">\n            <span class=\"span0 headline\">Upgrade </span><span class=\"span headline\">your Community</span>\n          </h1>\n          <p class=\"with-our-toolbox-for subline\">\n            <span class=\"subline\">WITH OUR TOOLBOX FOR YOUR WEBSITE - </span><span class=\"span1\">learn more</span>\n          </p>\n        </div>\n        <div class=\"overlap-group1\">\n          <div class=\"master-i-phone-15\">\n            <div class=\"overlap-group\">\n              <img class=\"berge-1\" src=\"https://content.dfx.swiss/img/berge-1.png\" alt=\"Berge 1\" />\n              <div class=\"frame\">\n                <div class=\"rectangle\"></div>\n                <div class=\"rectangle\"></div>\n                <div class=\"rectangle\"></div>\n                <div class=\"rectangle\"></div>\n              </div>\n              <div class=\"frame\">\n                <img class=\"frame-item\" src=\"https://content.dfx.swiss/img/trezor@2x.png\" alt=\"Trezor\" />\n                <img class=\"frame-item\" src=\"https://content.dfx.swiss/img/app@2x.png\" alt=\"App\" />\n                <img class=\"frame-item\" src=\"https://content.dfx.swiss/img/ledger@2x.png\" alt=\"Ledger\" />\n                <img class=\"frame-item\" src=\"https://content.dfx.swiss/img/bitbox@2x.png\" alt=\"BitBox\" />\n              </div>\n              <div class=\"rectangle-7\"></div>\n              <div class=\"rectangle-5\"></div>\n              <p class=\"implement-this-toolbox-in-your-homepage\">\n                <span class=\"span-2\">Implement this</span><span\n                  class=\"inter-extra-bold-big-stone-26px\">&nbsp;</span><span class=\"span\">TOOLBOX</span><span\n                  class=\"inter-extra-bold-big-stone-26px\">&nbsp;</span><span class=\"span-2\">in</span><span\n                  class=\"inter-extra-bold-big-stone-26px\">&nbsp;</span><span class=\"span\">YOUR HOMEPAGE</span>\n              </p>\n            </div>\n          </div>\n          <div class=\"frame-12\">\n            <div class=\"frame-1\">\n              <img class=\"x3\" src=\"https://content.dfx.swiss/img/3@2x.png\" alt=\"3\" />\n              <div class=\"fully-adjustable inter-extra-bold-white-23px\">fully adjustable</div>\n            </div>\n            <div class=\"frame-1\">\n              <img class=\"x4\" src=\"https://content.dfx.swiss/img/4@2x.png\" alt=\"4\" />\n              <div class=\"x5-blockchains inter-extra-bold-white-23px\">5<br />blockchains</div>\n            </div>\n            <div class=\"frame-1\">\n              <img class=\"x1\" src=\"https://content.dfx.swiss/img/1@2x.png\" alt=\"1\" />\n              <p class=\"x80-coins-token inter-extra-bold-white-23px\">&gt; 80 <br />coins &amp; token</p>\n            </div>\n            <div class=\"frame-1\">\n              <img class=\"x2\" src=\"https://content.dfx.swiss/img/2@2x.png\" alt=\"2\" />\n              <div class=\"revenue-share-model inter-extra-bold-white-23px\">revenue share model</div>\n            </div>\n            <div class=\"frame-1\">\n              <img class=\"svg-width245-height2\"\n                src=\"https://content.dfx.swiss/img/svg-width-245-height-233-viewbox-0-0-245-233-fill-none-xmlns-htt@2x.png\"\n                alt=\"svg width=245 height=233 viewBox=0 0 245 233 fill=none xmlns=httpwww.w3.org2000svg rect x=0.5 y=0.5 width=244 height=232 rx=43.5 fill=url(#paint0_linear_1582_2798) fill-opacity=0 1\" />\n              <div class=\"only-3-lines-code inter-extra-bold-white-23px\">only 3 lines code</div>\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n</body>\n<style>\n/* screen - dfx-page-2 */\n\n.dfx-page-2 {\n  align-items: flex-start;\n  background-color: var(--dfx-blue);\n  border: 1px none;\n  display: flex;\n  height: 1024px;\n  padding: 140px 160px;\n  width: 1440px;\n}\n\n.dfx-page-2 .overlap-group2 {\n  height: 701px;\n  margin-left: 22px;\n  margin-top: 43px;\n  position: relative;\n  width: 1098px;\n}\n\n.dfx-page-2 .headbox {\n  align-items: flex-start;\n  display: flex;\n  flex-direction: column;\n  gap: 20px;\n  left: 0;\n  position: absolute;\n  top: 111px;\n  width: 367px;\n}\n\n.dfx-page-2 .title {\n  color: transparent;\n  font-weight: 800;\n  line-height: normal;\n  margin-right: -123.00px;\n  margin-top: -1.00px;\n  position: relative;\n  width: 490px;\n}\n\n.dfx-page-2 .span0 {\n  color: var(--white);\n}\n\n.dfx-page-2 .span {\n  color: var(--dfx-red);\n}\n\n.dfx-page-2 .with-our-toolbox-for {\n  color: var(--white);\n  font-weight: 400;\n  line-height: normal;\n  position: relative;\n  width: 367px;\n}\n\n.dfx-page-2 .span1 {\n  font-family: var(--font-family-inter);\n  font-size: var(--font-size-m);\n  font-weight: 700;\n  letter-spacing: 0;\n}\n\n.dfx-page-2 .overlap-group1 {\n  height: 701px;\n  left: 1px;\n  position: absolute;\n  top: 0;\n  width: 1097px;\n}\n\n.dfx-page-2 .master-i-phone-15 {\n  align-items: flex-start;\n  background-color: #f7f7f7;\n  border-radius: 5px;\n  box-shadow: 0px 0px 29px #ffffff;\n  display: flex;\n  height: 701px;\n  left: 697px;\n  overflow: hidden;\n  position: absolute;\n  top: 0;\n  width: 400px;\n}\n\n.dfx-page-2 .overlap-group {\n  height: 701px;\n  position: relative;\n  width: 400px;\n}\n\n.dfx-page-2 .berge-1 {\n  height: 118px;\n  left: 0;\n  object-fit: cover;\n  position: absolute;\n  top: 583px;\n  width: 400px;\n}\n\n.dfx-page-2 .frame {\n  align-items: flex-start;\n  display: flex;\n  flex-wrap: wrap;\n  gap: 10px 10px;\n  left: 20px;\n  position: absolute;\n  top: 170px;\n  width: 360px;\n}\n\n.dfx-page-2 .rectangle {\n  background-color: var(--dfx-blue);\n  border-radius: 5px;\n  box-shadow: 0px 0px 5px 3px #00000040;\n  height: 175px;\n  position: relative;\n  width: 175px;\n}\n\n.dfx-page-2 .frame-item {\n  height: 175px;\n  object-fit: cover;\n  position: relative;\n  width: 175px;\n}\n\n.dfx-page-2 .rectangle-7 {\n  background-color: var(--dfx-blue);\n  height: 701px;\n  left: 0;\n  opacity: 0.83;\n  position: absolute;\n  top: 0;\n  width: 400px;\n}\n\n.dfx-page-2 .rectangle-5 {\n  background-color: var(--dfx-red);\n  height: 62px;\n  left: 20px;\n  position: absolute;\n  top: 55px;\n  width: 11px;\n}\n\n.dfx-page-2 .implement-this-toolbox-in-your-homepage {\n  color: transparent;\n  font-family: var(--font-family-inter);\n  font-size: var(--font-size-l);\n  font-weight: 800;\n  left: 43px;\n  letter-spacing: 0;\n  line-height: normal;\n  position: absolute;\n  top: 54px;\n  width: 337px;\n}\n\n.dfx-page-2 .span-2 {\n  color: #d9d9d9;\n}\n\n.dfx-page-2 .frame-12 {\n  align-items: flex-start;\n  background-color: var(--dfx-blue);\n  border-radius: 41px;\n  box-shadow: 5px 5px 29px #ffffff;\n  display: inline-flex;\n  gap: 40px;\n  left: 0;\n  padding: 30px 20px;\n  position: absolute;\n  top: 442px;\n}\n\n.dfx-page-2 .frame-1 {\n  align-items: center;\n  display: inline-flex;\n  flex: 0 0 auto;\n  flex-direction: column;\n  gap: 20px;\n  justify-content: center;\n  position: relative;\n}\n\n.dfx-page-2 .x3 {\n  height: 100px;\n  object-fit: cover;\n  position: relative;\n  width: 100px;\n}\n\n.dfx-page-2 .fully-adjustable {\n  letter-spacing: 0;\n  line-height: normal;\n  position: relative;\n  text-align: center;\n  width: 134px;\n}\n\n.dfx-page-2 .x4 {\n  height: 100px;\n  object-fit: cover;\n  position: relative;\n  width: 100px;\n}\n\n.dfx-page-2 .x5-blockchains {\n  letter-spacing: 0;\n  line-height: normal;\n  position: relative;\n  text-align: center;\n  width: 180px;\n}\n\n.dfx-page-2 .x1 {\n  height: 100px;\n  object-fit: cover;\n  position: relative;\n  width: 100px;\n}\n\n.dfx-page-2 .x80-coins-token {\n  letter-spacing: 0;\n  line-height: normal;\n  position: relative;\n  text-align: center;\n  width: 180px;\n}\n\n.dfx-page-2 .x2 {\n  height: 100px;\n  object-fit: cover;\n  position: relative;\n  width: 100px;\n}\n\n.dfx-page-2 .revenue-share-model {\n  letter-spacing: 0;\n  line-height: normal;\n  position: relative;\n  text-align: center;\n  width: 180px;\n}\n\n.dfx-page-2 .svg-width245-height2 {\n  height: 100px;\n  object-fit: cover;\n  position: relative;\n  width: 100px;\n}\n\n.dfx-page-2 .only-3-lines-code {\n  letter-spacing: 0;\n  line-height: normal;\n  position: relative;\n  text-align: center;\n  width: 180px;\n}\n@import url(\"https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css\");\n@import url(\"https://fonts.googleapis.com/css?family=Inter:400,700,800\");\n/* The following line is used to measure usage of this code. You can remove it if you want. */\n@import url(\"https://px.animaapp.com/64e0f5efa812e5206a399b37.64e0f5f0a812e5206a399b3a.qvAiCva.hcp.png\");\n\n\n\n.screen a {\n  display: contents;\n  text-decoration: none;\n}\n\n.container-center-horizontal {\n  display: flex;\n  flex-direction: row;\n  justify-content: center;\n  pointer-events: none;\n  width: 100%;\n}\n\n.container-center-horizontal > * {\n  flex-shrink: 0;\n  pointer-events: auto;\n}\n\n* {\n  box-sizing: border-box;\n}\n:root { \n  --black: #000000;\n  --dfx-blue: #072440;\n  --dfx-blue-800: #072440;\n  --dfx-red: #f5516c;\n  --white: #ffffff;\n  --white-color: #ffffff;\n \n  --font-size-l: 26px;\n  --font-size-m: 23px;\n  --font-size-xl: 53px;\n \n  --font-family-inter: \"Inter\", Helvetica;\n}\n.headline {\n  font-family: var(--font-family-inter);\n  font-size: var(--font-size-xl);\n  font-style: normal;\n  font-weight: 800;\n  letter-spacing: 0;\n}\n\n.subline {\n  font-family: var(--font-family-inter);\n  font-size: var(--font-size-m);\n  font-style: normal;\n  font-weight: 400;\n  letter-spacing: 0;\n}\n\n.inter-extra-bold-white-23px {\n  color: var(--white);\n  font-family: var(--font-family-inter);\n  font-size: var(--font-size-m);\n  font-style: normal;\n  font-weight: 800;\n}\n\n.inter-extra-bold-big-stone-26px {\n  color: var(--dfx-blue);\n  font-family: var(--font-family-inter);\n  font-size: var(--font-size-l);\n  font-style: normal;\n  font-weight: 800;\n}\n\n\n\n</style>"
+                ]
               }
             ]
           }
         }
       ],
       "type": "main",
-      "id": "0iVg2LbfctzjfJow"
+      "id": "75XUTXwhfEMQS82C"
     }
   ]
 }
