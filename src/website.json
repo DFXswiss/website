@@ -43,62 +43,6 @@
       }
     },
     {
-      "selectors": [{ "name": "row", "private": 1 }],
-      "style": {
-        "display": "flex",
-        "justify-content": "flex-start",
-        "align-items": "stretch",
-        "flex-wrap": "nowrap",
-        "padding-top": "10px",
-        "padding-right": "10px",
-        "padding-bottom": "10px",
-        "padding-left": "10px"
-      }
-    },
-    {
-      "selectors": [{ "name": "row", "private": 1 }],
-      "style": { "flex-wrap": "wrap" },
-      "mediaText": "(max-width: 768px)",
-      "atRuleType": "media"
-    },
-    {
-      "selectors": [{ "name": "cell", "private": 1 }],
-      "style": { "min-height": "75px", "flex-grow": "1", "flex-basis": "100%" }
-    },
-    {
-      "selectors": [{ "name": "gjs-row", "private": 1 }],
-      "style": {
-        "display": "table",
-        "padding-top": "10px",
-        "padding-right": "10px",
-        "padding-bottom": "10px",
-        "padding-left": "10px",
-        "width": "100%"
-      }
-    },
-    {
-      "selectors": [{ "name": "gjs-cell", "private": 1 }],
-      "style": { "width": "100%", "display": "block" },
-      "mediaText": "(max-width: 768px)",
-      "atRuleType": "media"
-    },
-    {
-      "selectors": ["gjs-cell30"],
-      "style": { "width": "100%", "display": "block" },
-      "mediaText": "(max-width: 768px)",
-      "atRuleType": "media"
-    },
-    {
-      "selectors": ["gjs-cell70"],
-      "style": { "width": "100%", "display": "block" },
-      "mediaText": "(max-width: 768px)",
-      "atRuleType": "media"
-    },
-    {
-      "selectors": [{ "name": "gjs-cell", "private": 1 }],
-      "style": { "width": "8%", "display": "table-cell", "height": "75px" }
-    },
-    {
       "selectors": ["navbar"],
       "style": {
         "background-color": "rgb(34, 34, 34)",
@@ -267,7 +211,7 @@
             "components": [
               {
                 "type": "custom-code",
-                "attributes": { "id": "ikzf" },
+                "attributes": { "id": "iy73" },
                 "components": [
                   {
                     "classes": ["root"],
@@ -362,14 +306,36 @@
                       {
                         "classes": ["container"],
                         "components": [
-                          { "classes": ["slide"] },
-                          { "classes": ["slide"] }
+                          {
+                            "classes": ["slide"],
+                            "components": [
+                              {
+                                "tagName": "h1",
+                                "type": "text",
+                                "components": [
+                                  { "type": "textnode", "content": "Slide" }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "classes": ["slide"],
+                            "components": [
+                              {
+                                "tagName": "h1",
+                                "type": "text",
+                                "components": [
+                                  { "type": "textnode", "content": "Slide" }
+                                ]
+                              }
+                            ]
+                          }
                         ]
                       }
                     ]
                   }
                 ],
-                "custom-code-plugin__code": "<body>\n    <div class=\"root\">\n        <div style=\"height: 10rem\">Header</div>\n        <div class=\"container\">\n            <div class=\"slide\">\n                <h2>Slide 1</h2>\n            </div>\n            <div class=\"slide\">\n                <h2>Slide 2</h2>\n            </div>\n        </div>\n    </div>\n</body>\n\n<style>\n    html,\n    body {\n        height: 100%;\n        margin: 0;\n    }\n\n    .root {\n        display: flex;\n        flex-direction: column;\n        height: 100vh;\n        overflow-y: hidden;\n    }\n\n    .container {\n        width: 100%;\n        flex: 1;\n        overflow-y: scroll;\n        scroll-snap-type: y mandatory;\n    }\n\n    .slide {\n        width: 100%;\n        height: 100%;\n        scroll-snap-align: start;\n        scroll-snap-stop: always;\n        overflow-y: hidden;\n    }\n</style>"
+                "custom-code-plugin__code": "<body>\n    <div class=\"root\">\n        <div class=\"container\">\n            <div class=\"slide\">\n                <h1>Slide</h1>\n            </div>\n        </div>\n    </div>\n</body>\n\n<style>\n    html,\n    body {\n        height: 100%;\n        margin: 0;\n    }\n\n    .root {\n        display: flex;\n        flex-direction: column;\n        height: 100vh;\n        overflow-y: hidden;\n    }\n\n    .container {\n        width: 100%;\n        flex: 1;\n        overflow-y: scroll;\n        scroll-snap-type: y mandatory;\n    }\n\n    .slide {\n        width: 100%;\n        height: 100%;\n        scroll-snap-align: start;\n        scroll-snap-stop: always;\n        overflow-y: hidden;\n    }\n</style>"
               }
             ]
           }
