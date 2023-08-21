@@ -13,3 +13,4 @@ Setup:
 Version 0.0.2
 Testing Grundfunktionen und scrollen
 v0.0.2.2 einbau Scroll
+v0.0.2.3 erste beta version
