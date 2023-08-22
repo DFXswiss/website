@@ -1,6 +1,205 @@
 {
-  "assets": [],
+  "assets": [
+    {
+      "type": "image",
+      "src": "https://dfx.swiss/wp-content/uploads/2022/10/dfx-logo-neu.png",
+      "unitDim": "px",
+      "height": 0,
+      "width": 0
+    }
+  ],
   "styles": [
+    {
+      "selectors": [],
+      "selectorsAdd": "html, body",
+      "style": {
+        "height": "100%",
+        "margin-top": "0px",
+        "margin-right": "0px",
+        "margin-bottom": "0px",
+        "margin-left": "0px"
+      }
+    },
+    {
+      "selectors": ["root"],
+      "style": {
+        "display": "flex",
+        "flex-direction": "column",
+        "height": "100vh",
+        "overflow-y": "hidden",
+        "z-index": "1",
+        "position": "relative"
+      }
+    },
+    {
+      "selectors": ["container"],
+      "style": {
+        "width": "100%",
+        "flex-grow": "1",
+        "flex-shrink": "1",
+        "flex-basis": "0%",
+        "overflow-y": "scroll",
+        "scroll-snap-type": "y mandatory"
+      }
+    },
+    {
+      "selectors": ["slide"],
+      "style": {
+        "width": "100%",
+        "height": "100%",
+        "scroll-snap-align": "start",
+        "scroll-snap-stop": "always",
+        "overflow-y": "hidden"
+      }
+    },
+    {
+      "selectors": ["navbar"],
+      "style": {
+        "color": "rgb(221, 221, 221)",
+        "min-height": "50px",
+        "width": "100%"
+      },
+      "group": "cmp:navbar"
+    },
+    {
+      "selectors": ["navbar-container"],
+      "style": {
+        "max-width": "950px",
+        "margin-top": "0px",
+        "margin-right": "auto",
+        "margin-bottom": "0px",
+        "margin-left": "auto",
+        "width": "95%"
+      },
+      "group": "cmp:navbar"
+    },
+    {
+      "selectors": ["navbar-items-c"],
+      "style": { "display": "inline-block", "float": "right" },
+      "group": "cmp:navbar"
+    },
+    {
+      "selectors": ["navbar-container"],
+      "style": { "content": "\"\"", "clear": "both", "display": "block" },
+      "state": ":after",
+      "group": "cmp:navbar"
+    },
+    {
+      "selectors": ["navbar-brand"],
+      "style": {
+        "vertical-align": "top",
+        "display": "inline-block",
+        "padding-top": "5px",
+        "padding-right": "5px",
+        "padding-bottom": "5px",
+        "padding-left": "5px",
+        "min-height": "50px",
+        "min-width": "50px",
+        "color": "inherit",
+        "text-decoration-line": "none",
+        "text-decoration-thickness": "initial",
+        "text-decoration-style": "initial",
+        "text-decoration-color": "initial"
+      },
+      "group": "cmp:navbar"
+    },
+    {
+      "selectors": ["navbar-menu"],
+      "style": {
+        "padding-top": "10px",
+        "padding-right": "0px",
+        "padding-bottom": "10px",
+        "padding-left": "0px",
+        "display": "block",
+        "float": "right",
+        "margin-top": "0px",
+        "margin-right": "0px",
+        "margin-bottom": "0px",
+        "margin-left": "0px"
+      },
+      "group": "cmp:navbar"
+    },
+    {
+      "selectors": ["navbar-menu-link"],
+      "style": {
+        "margin-top": "0px",
+        "margin-right": "0px",
+        "margin-bottom": "0px",
+        "margin-left": "0px",
+        "color": "inherit",
+        "text-decoration-line": "none",
+        "text-decoration-thickness": "initial",
+        "text-decoration-style": "initial",
+        "text-decoration-color": "initial",
+        "display": "inline-block",
+        "padding-top": "10px",
+        "padding-right": "15px",
+        "padding-bottom": "10px",
+        "padding-left": "15px"
+      },
+      "group": "cmp:navbar"
+    },
+    {
+      "selectors": ["navbar-burger"],
+      "style": {
+        "margin-top": "10px",
+        "margin-right": "0px",
+        "margin-bottom": "10px",
+        "margin-left": "0px",
+        "width": "45px",
+        "padding-top": "5px",
+        "padding-right": "10px",
+        "padding-bottom": "5px",
+        "padding-left": "10px",
+        "display": "none",
+        "float": "right",
+        "cursor": "pointer"
+      },
+      "group": "cmp:navbar"
+    },
+    {
+      "selectors": ["navbar-burger-line"],
+      "style": {
+        "padding-top": "1px",
+        "padding-right": "1px",
+        "padding-bottom": "1px",
+        "padding-left": "1px",
+        "background-color": "white",
+        "margin-top": "5px",
+        "margin-right": "0px",
+        "margin-bottom": "5px",
+        "margin-left": "0px"
+      },
+      "group": "cmp:navbar"
+    },
+    {
+      "selectors": ["navbar-items-c"],
+      "style": { "display": "none", "width": "100%" },
+      "mediaText": "(max-width: 768px)",
+      "atRuleType": "media",
+      "group": "cmp:navbar"
+    },
+    {
+      "selectors": ["navbar-burger"],
+      "style": { "display": "block" },
+      "mediaText": "(max-width: 768px)",
+      "atRuleType": "media",
+      "group": "cmp:navbar"
+    },
+    {
+      "selectors": ["navbar-menu"],
+      "style": { "width": "100%" },
+      "mediaText": "(max-width: 768px)",
+      "atRuleType": "media",
+      "group": "cmp:navbar"
+    },
+    {
+      "selectors": ["navbar-menu-link"],
+      "style": { "display": "block" },
+      "mediaText": "(max-width: 768px)",
+      "atRuleType": "media",
+      "group": "cmp:navbar"
+    },
     {
       "selectors": [{ "name": "gjs-row", "private": 1 }],
       "style": {
@@ -34,7 +233,109 @@
       "selectors": [{ "name": "gjs-cell", "private": 1 }],
       "style": { "width": "8%", "display": "table-cell", "height": "75px" }
     },
-    { "selectors": ["#ii19"], "style": { "padding": "10px" } }
+    {
+      "selectors": [{ "name": "row", "private": 1 }],
+      "style": {
+        "display": "flex",
+        "justify-content": "flex-start",
+        "align-items": "stretch",
+        "flex-wrap": "nowrap",
+        "padding-top": "10px",
+        "padding-right": "10px",
+        "padding-bottom": "10px",
+        "padding-left": "10px"
+      }
+    },
+    {
+      "selectors": [{ "name": "row", "private": 1 }],
+      "style": { "flex-wrap": "wrap" },
+      "mediaText": "(max-width: 768px)",
+      "atRuleType": "media"
+    },
+    {
+      "selectors": [{ "name": "cell", "private": 1 }],
+      "style": { "min-height": "75px", "flex-grow": "1", "flex-basis": "100%" }
+    },
+    { "selectors": ["#ivs5t"], "style": { "align-self": "center" } },
+    {
+      "selectors": ["#page1"],
+      "style": {
+        "height": "100%",
+        "padding": "0px 0px 0px 0px",
+        "align-items": "stretch"
+      }
+    },
+    {
+      "selectors": ["#i9s9p"],
+      "style": { "text-align": "left", "align-self": "center" }
+    },
+    {
+      "selectors": ["#ik2jx"],
+      "style": {
+        "padding": "10px",
+        "color": "#dddddd",
+        "max-width": "490px",
+        "font-size": "45px",
+        "font-weight": "800",
+        "font-family": "Verdana, Geneva, sans-serif",
+        "text-align": "right"
+      }
+    },
+    {
+      "selectors": ["#iwjhh"],
+      "style": {
+        "padding": "10px",
+        "color": "#dddddd",
+        "max-width": "490px",
+        "font-size": "22px",
+        "font-family": "Verdana, Geneva, sans-serif"
+      }
+    },
+    { "selectors": ["#idi1a"], "style": { "color": "#f5516c" } },
+    { "selectors": ["#is0zgn"], "style": { "color": "#f5516c" } },
+    { "selectors": ["#izriyr"], "style": { "color": "#f5516c" } },
+    { "selectors": ["#il2erh"], "style": { "text-align": "right" } },
+    {
+      "selectors": ["#itynmn"],
+      "style": {
+        "flex-direction": "column",
+        "padding": "0px 0px 0px 0px",
+        "align-items": "center"
+      }
+    },
+    { "selectors": ["#ippx4"], "style": { "padding": "0px 0px 0px 0px" } },
+    { "selectors": ["#idlqc"], "style": { "height": "auto" } },
+    {
+      "selectors": ["#iremt"],
+      "style": {
+        "height": "600px",
+        "width": "390px",
+        "box-shadow": "0px 0px 29px 0px white ",
+        "margin": "0px auto 0px auto"
+      }
+    },
+    {
+      "selectors": ["#i4v7a"],
+      "style": {
+        "color": "black",
+        "height": "40px",
+        "margin": "8px 0px 8px 8px"
+      }
+    },
+    {
+      "selectors": ["#i24sj"],
+      "style": {
+        "position": "fixed",
+        "padding": "0px 0px 0px 0px",
+        "width": "100%",
+        "justify-content": "center"
+      }
+    },
+    {
+      "selectors": ["#ich5v"],
+      "style": { "min-height": "auto", "max-width": "950px" }
+    },
+    { "selectors": ["#iw7q3"], "style": { "background-color": "#072440" } }
   ],
   "pages": [
     {
@@ -54,62 +355,418 @@
             "attributes": { "id": "ifea" },
             "components": [
               {
-                "name": "Row",
-                "droppable": ".gjs-cell",
-                "resizable": {
-                  "tl": 0,
-                  "tc": 0,
-                  "tr": 0,
-                  "cl": 0,
-                  "cr": 0,
-                  "bl": 0,
-                  "br": 0,
-                  "minDim": 1
-                },
-                "classes": [{ "name": "gjs-row", "private": 1 }],
-                "attributes": { "id": "iygb" },
+                "type": "custom-code",
+                "attributes": { "id": "iw7q3" },
                 "components": [
                   {
-                    "name": "Cell",
-                    "draggable": ".gjs-row",
+                    "droppable": ".cell",
                     "resizable": {
                       "tl": 0,
                       "tc": 0,
                       "tr": 0,
                       "cl": 0,
-                      "cr": 1,
+                      "cr": 0,
                       "bl": 0,
                       "br": 0,
-                      "minDim": 1,
-                      "bc": 0,
-                      "currentUnit": 1,
-                      "step": 0.2
+                      "minDim": 1
                     },
-                    "classes": [{ "name": "gjs-cell", "private": 1 }],
-                    "attributes": { "id": "i6hl" }
+                    "classes": [{ "name": "row", "private": 1 }],
+                    "attributes": { "id": "i24sj" },
+                    "custom-name": "Row",
+                    "components": [
+                      {
+                        "draggable": ".row",
+                        "stylable-require": ["flex-basis"],
+                        "unstylable": ["width"],
+                        "resizable": {
+                          "tl": 0,
+                          "tc": 0,
+                          "tr": 0,
+                          "cl": 0,
+                          "cr": 1,
+                          "bl": 0,
+                          "br": 0,
+                          "minDim": 1,
+                          "bc": 0,
+                          "keyWidth": "flex-basis",
+                          "currentUnit": 1,
+                          "step": 0.2
+                        },
+                        "classes": [{ "name": "cell", "private": 1 }],
+                        "attributes": { "id": "ich5v" },
+                        "custom-name": "Column",
+                        "components": [
+                          {
+                            "type": "image",
+                            "resizable": { "ratioDefault": 1 },
+                            "attributes": {
+                              "id": "i4v7a",
+                              "src": "https://dfx.swiss/wp-content/uploads/2022/10/dfx-logo-neu.png"
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "classes": ["root"],
+                    "components": [
+                      {
+                        "type": "navbar",
+                        "classes": ["navbar"],
+                        "attributes": {},
+                        "components": [
+                          {
+                            "type": "navbar-container",
+                            "classes": ["navbar-container"],
+                            "attributes": { "data-gjs": "navbar" },
+                            "components": [
+                              {
+                                "type": "link",
+                                "classes": ["navbar-brand"],
+                                "attributes": { "href": "/" }
+                              },
+                              {
+                                "type": "navbar-burger-menu",
+                                "classes": ["navbar-burger"],
+                                "attributes": {},
+                                "components": [
+                                  {
+                                    "type": "navbar-burger-menu-line",
+                                    "classes": ["navbar-burger-line"],
+                                    "attributes": {}
+                                  },
+                                  {
+                                    "type": "navbar-burger-menu-line",
+                                    "classes": ["navbar-burger-line"],
+                                    "attributes": {}
+                                  },
+                                  {
+                                    "type": "navbar-burger-menu-line",
+                                    "classes": ["navbar-burger-line"],
+                                    "attributes": {}
+                                  }
+                                ]
+                              },
+                              {
+                                "classes": ["navbar-items-c"],
+                                "attributes": { "data-gjs": "navbar-items" },
+                                "components": [
+                                  {
+                                    "type": "navbar-nav-menu",
+                                    "classes": ["navbar-menu"],
+                                    "attributes": {},
+                                    "components": [
+                                      {
+                                        "type": "scroll-link",
+                                        "classes": ["navbar-menu-link"],
+                                        "attributes": {
+                                          "href": "javascript:void(0)",
+                                          "target": "page1"
+                                        },
+                                        "components": [
+                                          {
+                                            "type": "textnode",
+                                            "content": "Page 1"
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "type": "scroll-link",
+                                        "classes": ["navbar-menu-link"],
+                                        "attributes": {
+                                          "href": "javascript:void(0)",
+                                          "target": "page2"
+                                        },
+                                        "components": [
+                                          {
+                                            "type": "textnode",
+                                            "content": "Page 2"
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "type": "scroll-link",
+                                        "classes": ["navbar-menu-link"],
+                                        "attributes": {
+                                          "href": "javascript:void(0)",
+                                          "target": "page3"
+                                        },
+                                        "components": [
+                                          {
+                                            "type": "textnode",
+                                            "content": "Page 3"
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "classes": ["container"],
+                        "components": [
+                          {
+                            "classes": ["slide"],
+                            "components": [
+                              {
+                                "droppable": ".cell",
+                                "resizable": {
+                                  "tl": 0,
+                                  "tc": 0,
+                                  "tr": 0,
+                                  "cl": 0,
+                                  "cr": 0,
+                                  "bl": 0,
+                                  "br": 0,
+                                  "minDim": 1
+                                },
+                                "classes": [{ "name": "row", "private": 1 }],
+                                "attributes": { "id": "page1" },
+                                "custom-name": "Row",
+                                "components": [
+                                  {
+                                    "draggable": ".row",
+                                    "stylable-require": ["flex-basis"],
+                                    "unstylable": ["width"],
+                                    "resizable": {
+                                      "tl": 0,
+                                      "tc": 0,
+                                      "tr": 0,
+                                      "cl": 0,
+                                      "cr": 1,
+                                      "bl": 0,
+                                      "br": 0,
+                                      "minDim": 1,
+                                      "bc": 0,
+                                      "keyWidth": "flex-basis",
+                                      "currentUnit": 1,
+                                      "step": 0.2
+                                    },
+                                    "classes": [
+                                      { "name": "cell", "private": 1 }
+                                    ],
+                                    "attributes": { "id": "ivs5t" },
+                                    "custom-name": "Column",
+                                    "components": [
+                                      {
+                                        "name": "Row",
+                                        "droppable": ".gjs-cell",
+                                        "resizable": {
+                                          "tl": 0,
+                                          "tc": 0,
+                                          "tr": 0,
+                                          "cl": 0,
+                                          "cr": 0,
+                                          "bl": 0,
+                                          "br": 0,
+                                          "minDim": 1
+                                        },
+                                        "classes": [
+                                          { "name": "gjs-row", "private": 1 }
+                                        ],
+                                        "attributes": { "id": "ippx4" },
+                                        "components": [
+                                          {
+                                            "name": "Cell",
+                                            "draggable": ".gjs-row",
+                                            "resizable": {
+                                              "tl": 0,
+                                              "tc": 0,
+                                              "tr": 0,
+                                              "cl": 0,
+                                              "cr": 1,
+                                              "bl": 0,
+                                              "br": 0,
+                                              "minDim": 1,
+                                              "bc": 0,
+                                              "currentUnit": 1,
+                                              "step": 0.2
+                                            },
+                                            "classes": [
+                                              {
+                                                "name": "gjs-cell",
+                                                "private": 1
+                                              }
+                                            ],
+                                            "attributes": { "id": "idlqc" },
+                                            "components": [
+                                              {
+                                                "type": "iframe",
+                                                "attributes": {
+                                                  "frameborder": "0",
+                                                  "src": "https://services.dfx.swiss",
+                                                  "width": "400",
+                                                  "id": "iremt"
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "draggable": ".row",
+                                    "stylable-require": ["flex-basis"],
+                                    "unstylable": ["width"],
+                                    "resizable": {
+                                      "tl": 0,
+                                      "tc": 0,
+                                      "tr": 0,
+                                      "cl": 0,
+                                      "cr": 1,
+                                      "bl": 0,
+                                      "br": 0,
+                                      "minDim": 1,
+                                      "bc": 0,
+                                      "keyWidth": "flex-basis",
+                                      "currentUnit": 1,
+                                      "step": 0.2
+                                    },
+                                    "classes": [
+                                      { "name": "cell", "private": 1 }
+                                    ],
+                                    "attributes": { "id": "i9s9p" },
+                                    "custom-name": "Column",
+                                    "components": [
+                                      {
+                                        "droppable": ".cell",
+                                        "resizable": {
+                                          "tl": 0,
+                                          "tc": 0,
+                                          "tr": 0,
+                                          "cl": 0,
+                                          "cr": 0,
+                                          "bl": 0,
+                                          "br": 0,
+                                          "minDim": 1
+                                        },
+                                        "classes": [
+                                          { "name": "row", "private": 1 }
+                                        ],
+                                        "attributes": { "id": "itynmn" },
+                                        "custom-name": "Row",
+                                        "components": [
+                                          {
+                                            "draggable": ".row",
+                                            "stylable-require": ["flex-basis"],
+                                            "unstylable": ["width"],
+                                            "resizable": {
+                                              "tl": 0,
+                                              "tc": 0,
+                                              "tr": 0,
+                                              "cl": 0,
+                                              "cr": 1,
+                                              "bl": 0,
+                                              "br": 0,
+                                              "minDim": 1,
+                                              "bc": 0,
+                                              "keyWidth": "flex-basis",
+                                              "currentUnit": 1,
+                                              "step": 0.2
+                                            },
+                                            "classes": [
+                                              { "name": "cell", "private": 1 }
+                                            ],
+                                            "attributes": { "id": "il2erh" },
+                                            "custom-name": "Column",
+                                            "components": [
+                                              {
+                                                "type": "text",
+                                                "attributes": { "id": "ik2jx" },
+                                                "components": [
+                                                  {
+                                                    "type": "textnode",
+                                                    "content": "Your service from "
+                                                  },
+                                                  {
+                                                    "tagName": "span",
+                                                    "type": "text",
+                                                    "attributes": {
+                                                      "id": "idi1a"
+                                                    },
+                                                    "components": [
+                                                      {
+                                                        "type": "textnode",
+                                                        "content": "Switzerland"
+                                                      }
+                                                    ]
+                                                  },
+                                                  {
+                                                    "type": "textnode",
+                                                    "content": " for everything around "
+                                                  },
+                                                  {
+                                                    "tagName": "span",
+                                                    "type": "text",
+                                                    "attributes": {
+                                                      "id": "is0zgn"
+                                                    },
+                                                    "components": [
+                                                      {
+                                                        "type": "textnode",
+                                                        "content": "Bitcoin"
+                                                      }
+                                                    ]
+                                                  },
+                                                  {
+                                                    "type": "textnode",
+                                                    "content": " and "
+                                                  },
+                                                  {
+                                                    "tagName": "span",
+                                                    "type": "text",
+                                                    "attributes": {
+                                                      "id": "izriyr"
+                                                    },
+                                                    "components": [
+                                                      {
+                                                        "type": "textnode",
+                                                        "content": "Crypto"
+                                                      }
+                                                    ]
+                                                  }
+                                                ]
+                                              },
+                                              {
+                                                "type": "text",
+                                                "attributes": { "id": "iwjhh" },
+                                                "components": [
+                                                  {
+                                                    "type": "textnode",
+                                                    "content": "BUY  • SELL • CONVERT • SEND GLOBALLY"
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "classes": ["slide"],
+                            "attributes": { "id": "page2" }
+                          },
+                          {
+                            "classes": ["slide"],
+                            "attributes": { "id": "page3" }
+                          }
+                        ]
+                      }
+                    ]
                   }
-                ]
-              },
-              {
-                "type": "text",
-                "attributes": { "id": "ii19" },
-                "components": [
-                  {
-                    "type": "textnode",
-                    "content": "Insert your text here KUKUK KUKUK¨"
-                  },
-                  { "tagName": "br", "void": true },
-                  { "tagName": "br", "void": true },
-                  { "type": "textnode", "content": "ah das ist ja nett" },
-                  { "tagName": "br", "void": true },
-                  { "tagName": "br", "void": true },
-                  {
-                    "type": "textnode",
-                    "content": "suuuuuuuuuuuuuuuper Sache"
-                  },
-                  { "tagName": "br", "void": true },
-                  { "tagName": "br", "void": true }
-                ]
+                ],
+                "custom-code-plugin__code": "<body>\n    <div class=\"root\">\n        <div class=\"container\">\n            <div class=\"slide\">\n                <h1>Slide</h1>\n            </div>\n        </div>\n    </div>\n</body>\n\n<style>\n    html,\n    body {\n        height: 100%;\n        margin: 0;\n    }\n\n    .root {\n        display: flex;\n        flex-direction: column;\n        height: 100vh;\n        overflow-y: hidden;\n    }\n\n    .container {\n        width: 100%;\n        flex: 1;\n        overflow-y: scroll;\n        scroll-snap-type: y mandatory;\n    }\n\n    .slide {\n        width: 100%;\n        height: 100%;\n        scroll-snap-align: start;\n        scroll-snap-stop: always;\n        overflow-y: hidden;\n    }\n</style>"
               }
             ]
           }
