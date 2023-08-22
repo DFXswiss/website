@@ -5,6 +5,7 @@
   <title>GrapesJS - DFX Website</title>
 
   <link rel="stylesheet" href="https://unpkg.com/grapesjs/dist/css/grapes.min.css">
+
   <script src="https://unpkg.com/grapesjs"></script>
   <script src="https://unpkg.com/grapesjs-preset-webpage"></script>
   <script src="https://unpkg.com/grapesjs-blocks-basic"></script>
@@ -38,7 +39,7 @@
           defaults: {
             script: function () {
               this.onclick = () => {
-                const targetId = this.getAttribute('target');
+                const targetId = this.getAttribute('target-id');
                 document.getElementById(targetId)?.scrollIntoView({ behavior: 'smooth' });
               }
             },
@@ -48,7 +49,7 @@
               href: 'javascript:void(0)',
             },
             traits: [
-              { name: 'target', label: 'Target element ID' },
+              { name: 'target-id', label: 'Target element ID' },
             ]
           }
         }
@@ -98,9 +99,26 @@
               fetchOptions: opts => (opts.method === 'POST' ? { method: 'PUT', headers } : { headers }),
             }
           }
-        }
+        },
+        canvas: {
+          styles: [
+            { href: "https://fonts.googleapis.com", rel: "preconnect" },
+            { href: "https://fonts.gstatic.com", rel: "preconnect", crossorigin: "" },
+            { href: "https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap", rel: "stylesheet" },
+          ],
+        },
       });
 
+      // add font
+      const fontSelector = editor.StyleManager.getProperty('typography', 'font-family');
+      const defaultFonts = fontSelector.get('options');
+      fontSelector.set('options', [
+        ...defaultFonts,
+        { value: "'Inter', sans-serif;", name: 'Inter' },
+      ]);
+
+
+      // add z-index
       editor.StyleManager.addProperty("general", {
         name: "Z-Index",
         property: "z-index",
