@@ -5,14 +5,13 @@
   <title>GrapesJS - DFX Website</title>
 
   <link rel="stylesheet" href="https://unpkg.com/grapesjs/dist/css/grapes.min.css">
+
   <script src="https://unpkg.com/grapesjs"></script>
   <script src="https://unpkg.com/grapesjs-preset-webpage"></script>
   <script src="https://unpkg.com/grapesjs-blocks-basic"></script>
-
   <script src="https://unpkg.com/grapesjs-navbar"></script>
   <script src="https://unpkg.com/grapesjs-tooltip"></script>
   <script src="https://unpkg.com/grapesjs-plugin-forms"></script>
-  <script src="https://unpkg.com/grapesjs-tabs"></script>
   <script src="https://unpkg.com/grapesjs-plugin-export"></script>
   <script src="https://unpkg.com/grapesjs-blocks-flexbox"></script>
   <script src="https://unpkg.com/grapesjs-custom-code"></script>
@@ -20,48 +19,113 @@
 
 <body>
   <style>
-    html, body, #gjs {
+    html,
+    body,
+    #gjs {
       margin: 0;
       height: 100% !important;
     }
   </style>
 
-  <div id="gjs"></div>
 
+  <div id="gjs">Please select a user ...</div>
 
   <script type="text/javascript">
-    const projectId = 'website';
-    const projectEndpoint = `http://localhost:4001/sites/${projectId}`;
-
-
-    var editor = grapesjs.init({
-      container: '#gjs',
-      plugins: [
-        'grapesjs-preset-webpage',
-        "gjs-blocks-basic",
-        "grapesjs-navbar",
-        "grapesjs-tooltip",
-        "grapesjs-plugin-forms",
-        "grapesjs-tabs",
-        "grapesjs-plugin-export",
-        "grapesjs-blocks-flexbox",
-        "grapesjs-custom-code",
-      ],
-      pluginsOpts: {},
-      storageManager: {
-        type: 'remote',
-        stepsBeforeSave: 1,
-        options: {
-          remote: {
-            urlLoad: projectEndpoint,
-            urlStore: projectEndpoint,
-            fetchOptions: opts => (opts.method === 'POST' ? { method: 'PATCH' } : {}),
-            onStore: data => ({ id: projectId, data }),
-            onLoad: result => result.data,
+    const dfxComponentTypes = editor => {
+      // in-page scroll link
+      editor.Components.addType('scroll-link', {
+        extend: 'link',
+        model: {
+          defaults: {
+            script: function () {
+              this.onclick = () => {
+                const targetId = this.getAttribute('target-id');
+                document.getElementById(targetId)?.scrollIntoView({ behavior: 'smooth' });
+              }
+            },
+            tagName: 'a',
+            attributes: {
+              class: 'navbar-menu-link',
+              href: 'javascript:void(0)',
+            },
+            traits: [
+              { name: 'target-id', label: 'Target element ID' },
+            ]
           }
         }
-      }
-    });
+      });
+
+      editor.Blocks.add('scroll-link', {
+        label: 'Scroll Link',
+        media: `<svg viewBox="0 0 24 24">
+        <path fill="currentColor" d="M3.9,12C3.9,10.29 5.29,8.9 7,8.9H11V7H7A5,5 0 0,0 2,12A5,5 0 0,0 7,17H11V15.1H7C5.29,15.1 3.9,13.71 3.9,12M8,13H16V11H8V13M17,7H13V8.9H17C18.71,8.9 20.1,10.29 20.1,12C20.1,13.71 18.71,15.1 17,15.1H13V17H17A5,5 0 0,0 22,12A5,5 0 0,0 17,7Z" />
+      </svg>`,
+        category: 'Extra',
+        content: { type: 'scroll-link', content: 'Link' },
+      });
+
+    };
+
+
+    const user = new URLSearchParams(window.location.search).get('user');
+
+    const token = 'xxx';
+    const projectEndpoint = `xxx/website/${user}.json${token}`;
+    const headers = { 'Content-Type': 'application/json', 'x-ms-blob-type': 'BlockBlob' }
+
+    if (user) {
+      var editor = grapesjs.init({
+        container: '#gjs',
+        // CAUTION: plugins should also to be added to build.ts
+        plugins: [
+          'grapesjs-preset-webpage',
+          "gjs-blocks-basic",
+          "grapesjs-navbar",
+          "grapesjs-tooltip",
+          "grapesjs-plugin-forms",
+          "grapesjs-plugin-export",
+          "grapesjs-blocks-flexbox",
+          "grapesjs-custom-code",
+          dfxComponentTypes,
+        ],
+        pluginsOpts: {},
+        storageManager: {
+          type: 'remote',
+          stepsBeforeSave: 1,
+          options: {
+            remote: {
+              urlLoad: projectEndpoint,
+              urlStore: projectEndpoint,
+              fetchOptions: opts => (opts.method === 'POST' ? { method: 'PUT', headers } : { headers }),
+            }
+          }
+        },
+        canvas: {
+          styles: [
+            { href: "https://fonts.googleapis.com", rel: "preconnect" },
+            { href: "https://fonts.gstatic.com", rel: "preconnect", crossorigin: "" },
+            { href: "https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap", rel: "stylesheet" },
+          ],
+        },
+      });
+
+      // add font
+      const fontSelector = editor.StyleManager.getProperty('typography', 'font-family');
+      const defaultFonts = fontSelector.get('options');
+      fontSelector.set('options', [
+        ...defaultFonts,
+        { value: "'Inter', sans-serif;", name: 'Inter' },
+      ]);
+
+
+      // add z-index
+      editor.StyleManager.addProperty("general", {
+        name: "Z-Index",
+        property: "z-index",
+        type: "number",
+        default: undefined,
+      });
+    }
   </script>
 </body>
 
